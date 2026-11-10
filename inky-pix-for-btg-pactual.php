@@ -3,7 +3,7 @@
  * Plugin Name:       Inky Pix for BTG Pactual
  * Plugin URI:        https://github.com/Inky-Digital/inky-pix-for-btg-pactual
  * Description:       Pix payments through BTG Pactual Empresas for WooCommerce: QR Code, copy and paste code, webhook and automatic order confirmation. Unofficial plugin, not affiliated with BTG Pactual.
- * Version:           0.2.2
+ * Version:           0.2.3
  * Requires at least: 6.2
  * Requires PHP:      8.1
  * Author:            Inky Digital
@@ -26,7 +26,7 @@ defined( 'ABSPATH' ) || exit;
  * O prefixo `INKY_BTG_` é usado em todas as constantes para evitar colisão
  * com outros plugins instalados no mesmo WordPress.
  */
-define( 'INKY_BTG_VERSION', '0.2.2' );
+define( 'INKY_BTG_VERSION', '0.2.3' );
 define( 'INKY_BTG_FILE', __FILE__ );
 define( 'INKY_BTG_PATH', plugin_dir_path( __FILE__ ) );
 define( 'INKY_BTG_URL', plugin_dir_url( __FILE__ ) );

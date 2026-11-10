@@ -5,7 +5,7 @@ Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 0.2.2
+Stable tag: 0.2.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -78,6 +78,10 @@ This plugin connects to the BTG Pactual Empresas API to authorize the account (O
 * Service: BTG Pactual Empresas. Privacy policy: https://www.btgpactual.com/politica-de-privacidade
 
 == Changelog ==
+
+= 0.2.3 =
+* New directory name: Inky Pix for BTG Pactual (text domain inky-pix-for-btg-pactual).
+* Readme in English, translators comments and table names through %i placeholders (Plugin Check).
 
 = 0.2.2 =
 * First public release: Pix Collection, OAuth with token renewal, webhook, periodic status checks, classic and block checkout.
