@@ -84,7 +84,7 @@ final class Inky_BTG_Blocks extends AbstractPaymentMethodType {
 		$gateway = $this->get_gateway();
 
 		return array(
-			'title'       => $gateway ? $gateway->title : __( 'PIX', 'inky-btg' ),
+			'title'       => $gateway ? $gateway->title : __( 'PIX', 'inky-pix-for-btg-pactual' ),
 			'description' => $gateway ? $gateway->description : '',
 			'icon'        => $gateway ? $gateway->icon : '',
 			'supports'    => array( 'products' ),

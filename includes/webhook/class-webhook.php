@@ -254,7 +254,7 @@ class Inky_BTG_Webhook {
 		);
 
 		if ( function_exists( 'as_enqueue_async_action' ) ) {
-			return (bool) as_enqueue_async_action( self::ASYNC_HOOK, array( $args ), 'inky-btg' );
+			return (bool) as_enqueue_async_action( self::ASYNC_HOOK, array( $args ), 'inky-pix-for-btg-pactual' );
 		}
 
 		/*
@@ -376,7 +376,7 @@ class Inky_BTG_Webhook {
 
 		$order->update_meta_data( Inky_BTG_Gateway::ORDER_META_STATUS, Inky_BTG_API_Contract::STATUS_UNLINKED );
 		$order->add_order_note(
-			__( 'O BTG informou que o QR Code desta cobrança foi desvinculado e não pode mais ser pago.', 'inky-btg' )
+			__( 'O BTG informou que o QR Code desta cobrança foi desvinculado e não pode mais ser pago.', 'inky-pix-for-btg-pactual' )
 		);
 		$order->save();
 

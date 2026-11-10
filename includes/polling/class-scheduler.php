@@ -115,7 +115,7 @@ class Inky_BTG_Scheduler {
 				time() + max( 1, (int) $delay ),
 				self::HOOK_POLL_ORDER,
 				array( $args ),
-				'inky-btg'
+				'inky-pix-for-btg-pactual'
 			);
 
 			return;
@@ -163,7 +163,7 @@ class Inky_BTG_Scheduler {
 		foreach ( array_keys( self::get_backoff() ) as $attempt ) {
 			$args = array( array( 'order_id' => $order_id, 'attempt' => $attempt ) );
 			if ( function_exists( 'as_unschedule_all_actions' ) ) {
-				as_unschedule_all_actions( self::HOOK_POLL_ORDER, $args, 'inky-btg' );
+				as_unschedule_all_actions( self::HOOK_POLL_ORDER, $args, 'inky-pix-for-btg-pactual' );
 			}
 			wp_clear_scheduled_hook( self::HOOK_POLL_ORDER, $args );
 		}
@@ -237,7 +237,7 @@ class Inky_BTG_Scheduler {
 			$next = as_next_scheduled_action(
 				self::HOOK_POLL_ORDER,
 				array( array( 'order_id' => (int) $order_id ) ),
-				'inky-btg'
+				'inky-pix-for-btg-pactual'
 			);
 
 			if ( false !== $next ) {

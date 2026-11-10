@@ -42,7 +42,7 @@ function inky_btg_uninstall_site() {
 
 		foreach ( $hooks as $hook ) {
 			if ( function_exists( 'as_unschedule_all_actions' ) ) {
-				as_unschedule_all_actions( $hook, array(), 'inky-btg' );
+				as_unschedule_all_actions( $hook, array(), 'inky-pix-for-btg-pactual' );
 			}
 
 			wp_unschedule_hook( $hook );
@@ -85,7 +85,7 @@ function inky_btg_uninstall_site() {
 
 	foreach ( $hooks as $hook ) {
 		if ( function_exists( 'as_unschedule_all_actions' ) ) {
-			as_unschedule_all_actions( $hook, array(), 'inky-btg' );
+			as_unschedule_all_actions( $hook, array(), 'inky-pix-for-btg-pactual' );
 		}
 
 		wp_unschedule_hook( $hook );

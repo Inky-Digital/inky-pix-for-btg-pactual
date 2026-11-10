@@ -55,10 +55,10 @@ class Inky_BTG_Gateway extends WC_Payment_Gateway {
 	 */
 	public function __construct() {
 		$this->id                 = self::ID;
-		$this->method_title       = __( 'PIX BTG Pactual', 'inky-btg' );
+		$this->method_title       = __( 'PIX BTG Pactual', 'inky-pix-for-btg-pactual' );
 		$this->method_description = __(
 			'Receba pagamentos por PIX usando a API Pix Cobrança do BTG Pactual Empresas. O cliente paga lendo o QR Code ou usando o copia e cola.',
-			'inky-btg'
+			'inky-pix-for-btg-pactual'
 		);
 		$this->has_fields         = false;
 		$this->supports           = array( 'products' );
@@ -67,7 +67,7 @@ class Inky_BTG_Gateway extends WC_Payment_Gateway {
 		$this->init_settings();
 
 		$this->enabled     = Inky_BTG_Settings::get( 'enabled', 'no' );
-		$this->title       = Inky_BTG_Settings::get( 'title', __( 'PIX', 'inky-btg' ) );
+		$this->title       = Inky_BTG_Settings::get( 'title', __( 'PIX', 'inky-pix-for-btg-pactual' ) );
 		$this->description = Inky_BTG_Settings::get( 'description', '' );
 		$this->icon        = $this->resolve_icon();
 
@@ -83,7 +83,7 @@ class Inky_BTG_Gateway extends WC_Payment_Gateway {
 		if ( $result ) {
 			Inky_BTG_Settings::set_many( array(
 				'enabled' => $this->get_option( 'enabled', 'no' ),
-				'title' => $this->get_option( 'title', __( 'PIX', 'inky-btg' ) ),
+				'title' => $this->get_option( 'title', __( 'PIX', 'inky-pix-for-btg-pactual' ) ),
 				'description' => $this->get_option( 'description', '' ),
 			) );
 		}
@@ -101,31 +101,31 @@ class Inky_BTG_Gateway extends WC_Payment_Gateway {
 	public function init_form_fields() {
 		$this->form_fields = array(
 			'enabled'     => array(
-				'title'   => __( 'Ativar', 'inky-btg' ),
+				'title'   => __( 'Ativar', 'inky-pix-for-btg-pactual' ),
 				'type'    => 'checkbox',
-				'label'   => __( 'Ativar o pagamento por PIX', 'inky-btg' ),
+				'label'   => __( 'Ativar o pagamento por PIX', 'inky-pix-for-btg-pactual' ),
 				'default' => 'no',
 			),
 			'title'       => array(
-				'title'       => __( 'Título no checkout', 'inky-btg' ),
+				'title'       => __( 'Título no checkout', 'inky-pix-for-btg-pactual' ),
 				'type'        => 'text',
 				'description' => __(
 					'Como o meio de pagamento aparece para o cliente no checkout.',
-					'inky-btg'
+					'inky-pix-for-btg-pactual'
 				),
-				'default'     => __( 'PIX', 'inky-btg' ),
+				'default'     => __( 'PIX', 'inky-pix-for-btg-pactual' ),
 				'desc_tip'    => true,
 			),
 			'description' => array(
-				'title'       => __( 'Descrição no checkout', 'inky-btg' ),
+				'title'       => __( 'Descrição no checkout', 'inky-pix-for-btg-pactual' ),
 				'type'        => 'textarea',
 				'description' => __(
 					'Texto exibido abaixo do título, explicando como o cliente deve pagar.',
-					'inky-btg'
+					'inky-pix-for-btg-pactual'
 				),
 				'default'     => __(
 					'Ao finalizar o pedido, mostramos o QR Code e o código copia e cola. O pedido é confirmado automaticamente após o pagamento.',
-					'inky-btg'
+					'inky-pix-for-btg-pactual'
 				),
 				'desc_tip'    => true,
 			),
@@ -185,7 +185,7 @@ class Inky_BTG_Gateway extends WC_Payment_Gateway {
 
 		if ( ! $order ) {
 			wc_add_notice(
-				__( 'Não foi possível localizar o pedido para gerar a cobrança PIX.', 'inky-btg' ),
+				__( 'Não foi possível localizar o pedido para gerar a cobrança PIX.', 'inky-pix-for-btg-pactual' ),
 				'error'
 			);
 
@@ -193,13 +193,13 @@ class Inky_BTG_Gateway extends WC_Payment_Gateway {
 		}
 		$service = Inky_BTG_Plugin::instance()->get_module( 'charges' );
 		if ( ! $service ) {
-			wc_add_notice( __( 'O serviço Pix não está disponível. Tente novamente.', 'inky-btg' ), 'error' );
+			wc_add_notice( __( 'O serviço Pix não está disponível. Tente novamente.', 'inky-pix-for-btg-pactual' ), 'error' );
 			return array( 'result' => 'failure' );
 		}
 		$charge = $service->create_for_order( $order );
 		if ( is_wp_error( $charge ) ) {
 			/* translators: %s: error message returned by the BTG API. */
-			$order->add_order_note( sprintf( __( 'Falha ao criar Pix BTG: %s', 'inky-btg' ), $charge->get_error_message() ) );
+			$order->add_order_note( sprintf( __( 'Falha ao criar Pix BTG: %s', 'inky-pix-for-btg-pactual' ), $charge->get_error_message() ) );
 			wc_add_notice( esc_html( $charge->get_error_message() ), 'error' );
 			return array( 'result' => 'failure' );
 		}
@@ -213,7 +213,7 @@ class Inky_BTG_Gateway extends WC_Payment_Gateway {
 		if ( ! $order->is_paid() ) {
 			$order->update_status(
 				'on-hold',
-				__( 'Aguardando o pagamento do PIX.', 'inky-btg' )
+				__( 'Aguardando o pagamento do PIX.', 'inky-pix-for-btg-pactual' )
 			);
 		}
 

@@ -69,8 +69,8 @@ class Inky_BTG_Admin {
 	public function register_menu() {
 		add_submenu_page(
 			'woocommerce',
-			__( 'PIX BTG Pactual', 'inky-btg' ),
-			__( 'PIX BTG Pactual', 'inky-btg' ),
+			__( 'PIX BTG Pactual', 'inky-pix-for-btg-pactual' ),
+			__( 'PIX BTG Pactual', 'inky-pix-for-btg-pactual' ),
 			INKY_BTG_CAPABILITY,
 			self::PAGE_SLUG,
 			array( $this, 'render_page' )
@@ -110,18 +110,18 @@ class Inky_BTG_Admin {
 				'ajaxUrl' => admin_url( 'admin-ajax.php' ),
 				'nonce'   => wp_create_nonce( 'inky_btg_admin' ),
 				'strings' => array(
-					'testing'      => __( 'Testando conexão…', 'inky-btg' ),
-					'copied'       => __( 'Log copiado.', 'inky-btg' ),
-					'copyError'    => __( 'Não foi possível copiar o log.', 'inky-btg' ),
-					'checking'     => __( 'Consultando o BTG…', 'inky-btg' ),
-					'checkError'   => __( 'Não foi possível consultar o pagamento.', 'inky-btg' ),
-					'missingOrder' => __( 'Informe o número do pedido.', 'inky-btg' ),
-					'stepOk'       => __( 'OK', 'inky-btg' ),
-					'stepFail'     => __( 'Falhou', 'inky-btg' ),
-					'stepSkip'     => __( 'Ignorado', 'inky-btg' ),
-					'stepRunning'  => __( 'Verificando…', 'inky-btg' ),
-					'testDone'     => __( 'Checklist concluído.', 'inky-btg' ),
-					'testFailed'   => __( 'O checklist parou na etapa que falhou.', 'inky-btg' ),
+					'testing'      => __( 'Testando conexão…', 'inky-pix-for-btg-pactual' ),
+					'copied'       => __( 'Log copiado.', 'inky-pix-for-btg-pactual' ),
+					'copyError'    => __( 'Não foi possível copiar o log.', 'inky-pix-for-btg-pactual' ),
+					'checking'     => __( 'Consultando o BTG…', 'inky-pix-for-btg-pactual' ),
+					'checkError'   => __( 'Não foi possível consultar o pagamento.', 'inky-pix-for-btg-pactual' ),
+					'missingOrder' => __( 'Informe o número do pedido.', 'inky-pix-for-btg-pactual' ),
+					'stepOk'       => __( 'OK', 'inky-pix-for-btg-pactual' ),
+					'stepFail'     => __( 'Falhou', 'inky-pix-for-btg-pactual' ),
+					'stepSkip'     => __( 'Ignorado', 'inky-pix-for-btg-pactual' ),
+					'stepRunning'  => __( 'Verificando…', 'inky-pix-for-btg-pactual' ),
+					'testDone'     => __( 'Checklist concluído.', 'inky-pix-for-btg-pactual' ),
+					'testFailed'   => __( 'O checklist parou na etapa que falhou.', 'inky-pix-for-btg-pactual' ),
 				),
 			)
 		);
@@ -151,7 +151,7 @@ class Inky_BTG_Admin {
 
 		printf(
 			'<div class="notice notice-warning"><p><strong>%s</strong> %s</p></div>',
-			esc_html__( 'PIX BTG Pactual:', 'inky-btg' ),
+			esc_html__( 'PIX BTG Pactual:', 'inky-pix-for-btg-pactual' ),
 			esc_html(
 				sprintf(
 					/* translators: %d: número de pendências. */
@@ -159,7 +159,7 @@ class Inky_BTG_Admin {
 						'Há %d item aguardando confirmação na documentação do BTG. O plugin funciona em modo presumido até que seja confirmado.',
 						'Há %d itens aguardando confirmação na documentação do BTG. O plugin funciona em modo presumido até que sejam confirmados.',
 						$count,
-						'inky-btg'
+						'inky-pix-for-btg-pactual'
 					),
 					$count
 				)
@@ -174,7 +174,7 @@ class Inky_BTG_Admin {
 	 */
 	public function render_page() {
 		if ( ! current_user_can( INKY_BTG_CAPABILITY ) ) {
-			wp_die( esc_html__( 'Você não tem permissão para acessar esta página.', 'inky-btg' ) );
+			wp_die( esc_html__( 'Você não tem permissão para acessar esta página.', 'inky-pix-for-btg-pactual' ) );
 		}
 
 		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Tab selection for display only; no state change.
@@ -183,16 +183,16 @@ class Inky_BTG_Admin {
 		$env      = Inky_BTG_Settings::get_environment();
 
 		$tabs = array(
-			'connection' => __( 'Conexão', 'inky-btg' ),
-			'checkout'   => __( 'Checkout', 'inky-btg' ),
-			'webhook'    => __( 'Webhook', 'inky-btg' ),
-			'diagnostics' => __( 'Diagnóstico', 'inky-btg' ),
-			'pending'    => __( 'Pendências', 'inky-btg' ),
+			'connection' => __( 'Conexão', 'inky-pix-for-btg-pactual' ),
+			'checkout'   => __( 'Checkout', 'inky-pix-for-btg-pactual' ),
+			'webhook'    => __( 'Webhook', 'inky-pix-for-btg-pactual' ),
+			'diagnostics' => __( 'Diagnóstico', 'inky-pix-for-btg-pactual' ),
+			'pending'    => __( 'Pendências', 'inky-pix-for-btg-pactual' ),
 		);
 
 		?>
 		<div class="wrap inky-btg-wrap">
-			<h1><?php esc_html_e( 'PIX BTG Pactual para WooCommerce', 'inky-btg' ); ?></h1>
+			<h1><?php esc_html_e( 'PIX BTG Pactual para WooCommerce', 'inky-pix-for-btg-pactual' ); ?></h1>
 
 			<?php $this->render_saved_notice(); ?>
 
@@ -249,7 +249,7 @@ class Inky_BTG_Admin {
 
 		printf(
 			'<div class="notice notice-success is-dismissible"><p>%s</p></div>',
-			esc_html__( 'Configurações salvas.', 'inky-btg' )
+			esc_html__( 'Configurações salvas.', 'inky-pix-for-btg-pactual' )
 		);
 	}
 
@@ -270,44 +270,44 @@ class Inky_BTG_Admin {
 			<input type="hidden" name="tab" value="connection" />
 			<?php wp_nonce_field( self::NONCE_SAVE, self::NONCE_SAVE ); ?>
 
-			<h2><?php esc_html_e( 'Ambiente', 'inky-btg' ); ?></h2>
+			<h2><?php esc_html_e( 'Ambiente', 'inky-pix-for-btg-pactual' ); ?></h2>
 			<p class="description">
-				<?php esc_html_e( 'Sandbox e produção usam credenciais e tokens separados. Trocar o ambiente não apaga os dados do outro.', 'inky-btg' ); ?>
+				<?php esc_html_e( 'Sandbox e produção usam credenciais e tokens separados. Trocar o ambiente não apaga os dados do outro.', 'inky-pix-for-btg-pactual' ); ?>
 			</p>
 
 			<table class="form-table" role="presentation">
 				<tr>
-					<th scope="row"><?php esc_html_e( 'Ambiente ativo', 'inky-btg' ); ?></th>
+					<th scope="row"><?php esc_html_e( 'Ambiente ativo', 'inky-pix-for-btg-pactual' ); ?></th>
 					<td>
 						<fieldset>
 							<label>
 								<input type="radio" name="environment" value="sandbox" <?php checked( $env, 'sandbox' ); ?> />
-								<?php esc_html_e( 'Sandbox (testes)', 'inky-btg' ); ?>
+								<?php esc_html_e( 'Sandbox (testes)', 'inky-pix-for-btg-pactual' ); ?>
 							</label>
 							<br />
 							<label>
 								<input type="radio" name="environment" value="production" <?php checked( $env, 'production' ); ?> />
-								<?php esc_html_e( 'Produção', 'inky-btg' ); ?>
+								<?php esc_html_e( 'Produção', 'inky-pix-for-btg-pactual' ); ?>
 							</label>
 						</fieldset>
 						<?php if ( 'sandbox' === $env ) : ?>
 						<p class="description">
-							<?php esc_html_e( 'Atenção: o sandbox usa respostas simuladas. Ele permite testar a integração, mas não comprova pagamento e não marca pedidos como pagos.', 'inky-btg' ); ?>
+							<?php esc_html_e( 'Atenção: o sandbox usa respostas simuladas. Ele permite testar a integração, mas não comprova pagamento e não marca pedidos como pagos.', 'inky-pix-for-btg-pactual' ); ?>
 						</p>
 						<?php endif; ?>
 					</td>
 				</tr>
 			</table>
 
-			<h2><?php esc_html_e( 'Credenciais do aplicativo', 'inky-btg' ); ?></h2>
+			<h2><?php esc_html_e( 'Credenciais do aplicativo', 'inky-pix-for-btg-pactual' ); ?></h2>
 			<p class="description">
-				<?php esc_html_e( 'Informe o client_id e o client_secret do aplicativo criado na Área do Desenvolvedor do BTG. Os valores são cifrados antes de serem gravados.', 'inky-btg' ); ?>
+				<?php esc_html_e( 'Informe o client_id e o client_secret do aplicativo criado na Área do Desenvolvedor do BTG. Os valores são cifrados antes de serem gravados.', 'inky-pix-for-btg-pactual' ); ?>
 			</p>
 
 			<table class="form-table" role="presentation">
 				<tr>
 					<th scope="row">
-						<label for="inky-btg-client-id"><?php esc_html_e( 'Client ID', 'inky-btg' ); ?></label>
+						<label for="inky-btg-client-id"><?php esc_html_e( 'Client ID', 'inky-pix-for-btg-pactual' ); ?></label>
 					</th>
 					<td>
 						<input
@@ -318,12 +318,12 @@ class Inky_BTG_Admin {
 							autocomplete="off"
 							placeholder="<?php echo esc_attr( $has_creds ? Inky_BTG_Encryption::mask( $credentials['client_id'] ) : '' ); ?>"
 						/>
-						<p class="description"><?php esc_html_e( 'Deixe em branco para manter o valor atual.', 'inky-btg' ); ?></p>
+						<p class="description"><?php esc_html_e( 'Deixe em branco para manter o valor atual.', 'inky-pix-for-btg-pactual' ); ?></p>
 					</td>
 				</tr>
 				<tr>
 					<th scope="row">
-						<label for="inky-btg-client-secret"><?php esc_html_e( 'Client Secret', 'inky-btg' ); ?></label>
+						<label for="inky-btg-client-secret"><?php esc_html_e( 'Client Secret', 'inky-pix-for-btg-pactual' ); ?></label>
 					</th>
 					<td>
 						<input
@@ -334,54 +334,54 @@ class Inky_BTG_Admin {
 							autocomplete="new-password"
 							placeholder="<?php echo esc_attr( $has_creds ? Inky_BTG_Encryption::mask( $credentials['client_secret'] ) : '' ); ?>"
 						/>
-						<p class="description"><?php esc_html_e( 'Deixe em branco para manter o valor atual.', 'inky-btg' ); ?></p>
+						<p class="description"><?php esc_html_e( 'Deixe em branco para manter o valor atual.', 'inky-pix-for-btg-pactual' ); ?></p>
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="inky-btg-pix-key"><?php esc_html_e( 'Chave Pix da conta recebedora', 'inky-btg' ); ?></label></th>
+					<th scope="row"><label for="inky-btg-pix-key"><?php esc_html_e( 'Chave Pix da conta recebedora', 'inky-pix-for-btg-pactual' ); ?></label></th>
 					<td>
 						<input type="password" id="inky-btg-pix-key" name="pix_key" class="regular-text code" autocomplete="new-password" placeholder="<?php echo esc_attr( ! empty( $credentials['pix_key'] ) ? Inky_BTG_Encryption::mask( $credentials['pix_key'] ) : '' ); ?>" />
-						<p class="description"><?php esc_html_e( 'Obrigatória para criar cobranças. Deixe em branco para manter a chave atual.', 'inky-btg' ); ?></p>
+						<p class="description"><?php esc_html_e( 'Obrigatória para criar cobranças. Deixe em branco para manter a chave atual.', 'inky-pix-for-btg-pactual' ); ?></p>
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><?php esc_html_e( 'URL de redirecionamento', 'inky-btg' ); ?></th>
+					<th scope="row"><?php esc_html_e( 'URL de redirecionamento', 'inky-pix-for-btg-pactual' ); ?></th>
 					<td>
 						<code class="inky-btg-copyable"><?php echo esc_html( $redirect ); ?></code>
 						<p class="description">
-							<?php esc_html_e( 'Cadastre exatamente esta URL no aplicativo do BTG. Ela não é configurável.', 'inky-btg' ); ?>
+							<?php esc_html_e( 'Cadastre exatamente esta URL no aplicativo do BTG. Ela não é configurável.', 'inky-pix-for-btg-pactual' ); ?>
 						</p>
 					</td>
 				</tr>
 			</table>
 
-			<?php submit_button( __( 'Salvar credenciais', 'inky-btg' ) ); ?>
+			<?php submit_button( __( 'Salvar credenciais', 'inky-pix-for-btg-pactual' ) ); ?>
 		</form>
 
 		<hr />
 
-		<h2><?php esc_html_e( 'Autorização', 'inky-btg' ); ?></h2>
+		<h2><?php esc_html_e( 'Autorização', 'inky-pix-for-btg-pactual' ); ?></h2>
 		<p class="description">
-			<?php esc_html_e( 'O BTG usa o fluxo Authorization Code. É preciso autorizar uma vez por ambiente, entrando com um usuário operador ou superior.', 'inky-btg' ); ?>
+			<?php esc_html_e( 'O BTG usa o fluxo Authorization Code. É preciso autorizar uma vez por ambiente, entrando com um usuário operador ou superior.', 'inky-pix-for-btg-pactual' ); ?>
 		</p>
 
 		<?php $this->render_oauth_status( $env, $has_creds ); ?>
 
 		<p>
 			<button type="button" class="button button-secondary" id="inky-btg-test-connection" <?php disabled( ! $has_creds ); ?>>
-				<?php esc_html_e( 'Testar conexão', 'inky-btg' ); ?>
+				<?php esc_html_e( 'Testar conexão', 'inky-pix-for-btg-pactual' ); ?>
 			</button>
 			<span class="inky-btg-test-result" aria-live="polite"></span>
 		</p>
 
 		<div class="inky-btg-checklist" id="inky-btg-checklist" hidden>
-			<h3><?php esc_html_e( 'Checklist da conexão', 'inky-btg' ); ?></h3>
+			<h3><?php esc_html_e( 'Checklist da conexão', 'inky-pix-for-btg-pactual' ); ?></h3>
 			<ol class="inky-btg-checklist-steps"></ol>
 		</div>
 
 		<?php if ( ! $has_creds ) : ?>
 			<p class="inky-btg-hint">
-				<?php esc_html_e( 'Salve o client_id e o client_secret para habilitar o teste de conexão.', 'inky-btg' ); ?>
+				<?php esc_html_e( 'Salve o client_id e o client_secret para habilitar o teste de conexão.', 'inky-pix-for-btg-pactual' ); ?>
 			</p>
 		<?php endif; ?>
 		<?php
@@ -418,20 +418,20 @@ class Inky_BTG_Admin {
 			?>
 			<table class="form-table" role="presentation">
 				<tr>
-					<th scope="row"><?php esc_html_e( 'Situação', 'inky-btg' ); ?></th>
+					<th scope="row"><?php esc_html_e( 'Situação', 'inky-pix-for-btg-pactual' ); ?></th>
 					<td>
-						<span class="inky-btg-status inky-btg-status--ok"><?php esc_html_e( 'Conectado', 'inky-btg' ); ?></span>
+						<span class="inky-btg-status inky-btg-status--ok"><?php esc_html_e( 'Conectado', 'inky-pix-for-btg-pactual' ); ?></span>
 					</td>
 				</tr>
 				<?php if ( '' !== $summary['company_id'] ) : ?>
 					<tr>
-						<th scope="row"><?php esc_html_e( 'CNPJ autorizado', 'inky-btg' ); ?></th>
+						<th scope="row"><?php esc_html_e( 'CNPJ autorizado', 'inky-pix-for-btg-pactual' ); ?></th>
 						<td><code><?php echo esc_html( $summary['company_id'] ); ?></code></td>
 					</tr>
 				<?php endif; ?>
 				<?php if ( $summary['expires_at'] > 0 ) : ?>
 					<tr>
-						<th scope="row"><?php esc_html_e( 'Token válido até', 'inky-btg' ); ?></th>
+						<th scope="row"><?php esc_html_e( 'Token válido até', 'inky-pix-for-btg-pactual' ); ?></th>
 						<td>
 							<?php
 							echo esc_html(
@@ -449,7 +449,7 @@ class Inky_BTG_Admin {
 			<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
 				<input type="hidden" name="action" value="<?php echo esc_attr( self::ACTION_DISCONNECT ); ?>" />
 				<?php wp_nonce_field( self::ACTION_DISCONNECT, self::NONCE_SAVE ); ?>
-				<?php submit_button( __( 'Desconectar conta', 'inky-btg' ), 'delete', 'submit', false, array( 'onclick' => 'return confirm(' . wp_json_encode( __( 'Desconectar apaga o token. Para voltar a funcionar, a titular da conta terá de autorizar de novo. Continuar?', 'inky-btg' ) ) . ');' ) ); ?>
+				<?php submit_button( __( 'Desconectar conta', 'inky-pix-for-btg-pactual' ), 'delete', 'submit', false, array( 'onclick' => 'return confirm(' . wp_json_encode( __( 'Desconectar apaga o token. Para voltar a funcionar, a titular da conta terá de autorizar de novo. Continuar?', 'inky-pix-for-btg-pactual' ) ) . ');' ) ); ?>
 			</form>
 			<?php
 			return;
@@ -457,27 +457,27 @@ class Inky_BTG_Admin {
 
 		?>
 		<p>
-			<span class="inky-btg-status inky-btg-status--off"><?php esc_html_e( 'Não conectado', 'inky-btg' ); ?></span>
+			<span class="inky-btg-status inky-btg-status--off"><?php esc_html_e( 'Não conectado', 'inky-pix-for-btg-pactual' ); ?></span>
 		</p>
 
 		<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
 			<input type="hidden" name="action" value="<?php echo esc_attr( self::ACTION_CONNECT ); ?>" />
 			<?php wp_nonce_field( self::ACTION_CONNECT, self::NONCE_SAVE ); ?>
-			<?php submit_button( __( 'Conectar conta do BTG', 'inky-btg' ), 'primary', 'submit', false, $has_creds ? array() : array( 'disabled' => 'disabled' ) ); ?>
-			<?php submit_button( __( 'Gerar link para a cliente', 'inky-btg' ), 'secondary', 'inky_btg_share', false, $has_creds ? array() : array( 'disabled' => 'disabled' ) ); ?>
+			<?php submit_button( __( 'Conectar conta do BTG', 'inky-pix-for-btg-pactual' ), 'primary', 'submit', false, $has_creds ? array() : array( 'disabled' => 'disabled' ) ); ?>
+			<?php submit_button( __( 'Gerar link para a cliente', 'inky-pix-for-btg-pactual' ), 'secondary', 'inky_btg_share', false, $has_creds ? array() : array( 'disabled' => 'disabled' ) ); ?>
 		</form>
 
 		<?php $share_link = get_transient( 'inky_btg_share_link' ); ?>
 		<?php if ( $share_link ) : ?>
 			<p>
-				<label for="inky-btg-share-link"><?php esc_html_e( 'Envie este link à cliente. Ela entra com o usuário dela (perfil Operador ou superior), escolhe a empresa e autoriza. Vale por 7 dias e só pode ser usado uma vez.', 'inky-btg' ); ?></label><br />
+				<label for="inky-btg-share-link"><?php esc_html_e( 'Envie este link à cliente. Ela entra com o usuário dela (perfil Operador ou superior), escolhe a empresa e autoriza. Vale por 7 dias e só pode ser usado uma vez.', 'inky-pix-for-btg-pactual' ); ?></label><br />
 				<input type="text" id="inky-btg-share-link" class="large-text code" readonly value="<?php echo esc_attr( $share_link ); ?>" onclick="this.select();" />
 			</p>
 		<?php endif; ?>
 
 		<?php if ( ! $has_creds ) : ?>
 			<p class="inky-btg-hint">
-				<?php esc_html_e( 'Salve as credenciais antes de conectar.', 'inky-btg' ); ?>
+				<?php esc_html_e( 'Salve as credenciais antes de conectar.', 'inky-pix-for-btg-pactual' ); ?>
 			</p>
 		<?php endif; ?>
 		<?php
@@ -490,7 +490,7 @@ class Inky_BTG_Admin {
 		*/
 	public function handle_connect() {
 		if ( ! current_user_can( INKY_BTG_CAPABILITY ) ) {
-			wp_die( esc_html__( 'Você não tem permissão para conectar a conta.', 'inky-btg' ) );
+			wp_die( esc_html__( 'Você não tem permissão para conectar a conta.', 'inky-pix-for-btg-pactual' ) );
 		}
 
 		check_admin_referer( self::ACTION_CONNECT, self::NONCE_SAVE );
@@ -532,7 +532,7 @@ class Inky_BTG_Admin {
 		*/
 	public function handle_disconnect() {
 		if ( ! current_user_can( INKY_BTG_CAPABILITY ) ) {
-			wp_die( esc_html__( 'Você não tem permissão para desconectar a conta.', 'inky-btg' ) );
+			wp_die( esc_html__( 'Você não tem permissão para desconectar a conta.', 'inky-pix-for-btg-pactual' ) );
 		}
 
 		check_admin_referer( self::ACTION_DISCONNECT, self::NONCE_SAVE );
@@ -547,7 +547,7 @@ class Inky_BTG_Admin {
 					'page'         => self::PAGE_SLUG,
 					'tab'          => 'connection',
 					'oauth_status' => 'success',
-					'oauth_notice' => rawurlencode( __( 'Conta desconectada.', 'inky-btg' ) ),
+					'oauth_notice' => rawurlencode( __( 'Conta desconectada.', 'inky-pix-for-btg-pactual' ) ),
 				),
 				admin_url( 'admin.php' )
 			)
@@ -572,17 +572,17 @@ class Inky_BTG_Admin {
 
 			<table class="form-table" role="presentation">
 				<tr>
-					<th scope="row"><?php esc_html_e( 'Habilitar no checkout', 'inky-btg' ); ?></th>
+					<th scope="row"><?php esc_html_e( 'Habilitar no checkout', 'inky-pix-for-btg-pactual' ); ?></th>
 					<td>
 						<label>
 							<input type="checkbox" name="enabled" value="yes" <?php checked( 'yes', isset( $settings['enabled'] ) ? $settings['enabled'] : 'no' ); ?> />
-							<?php esc_html_e( 'Exibir o PIX como forma de pagamento', 'inky-btg' ); ?>
+							<?php esc_html_e( 'Exibir o PIX como forma de pagamento', 'inky-pix-for-btg-pactual' ); ?>
 						</label>
 					</td>
 				</tr>
 				<tr>
 					<th scope="row">
-						<label for="inky-btg-title"><?php esc_html_e( 'Título', 'inky-btg' ); ?></label>
+						<label for="inky-btg-title"><?php esc_html_e( 'Título', 'inky-pix-for-btg-pactual' ); ?></label>
 					</th>
 					<td>
 						<input type="text" id="inky-btg-title" name="title" class="regular-text" value="<?php echo esc_attr( isset( $settings['title'] ) ? $settings['title'] : '' ); ?>" />
@@ -590,7 +590,7 @@ class Inky_BTG_Admin {
 				</tr>
 				<tr>
 					<th scope="row">
-						<label for="inky-btg-description"><?php esc_html_e( 'Descrição', 'inky-btg' ); ?></label>
+						<label for="inky-btg-description"><?php esc_html_e( 'Descrição', 'inky-pix-for-btg-pactual' ); ?></label>
 					</th>
 					<td>
 						<textarea id="inky-btg-description" name="description" class="large-text" rows="2"><?php echo esc_textarea( isset( $settings['description'] ) ? $settings['description'] : '' ); ?></textarea>
@@ -598,7 +598,7 @@ class Inky_BTG_Admin {
 				</tr>
 				<tr>
 					<th scope="row">
-						<label for="inky-btg-instructions"><?php esc_html_e( 'Instruções na tela de obrigado', 'inky-btg' ); ?></label>
+						<label for="inky-btg-instructions"><?php esc_html_e( 'Instruções na tela de obrigado', 'inky-pix-for-btg-pactual' ); ?></label>
 					</th>
 					<td>
 						<textarea id="inky-btg-instructions" name="instructions" class="large-text" rows="3"><?php echo esc_textarea( isset( $settings['instructions'] ) ? $settings['instructions'] : '' ); ?></textarea>
@@ -606,29 +606,29 @@ class Inky_BTG_Admin {
 				</tr>
 				<tr>
 					<th scope="row">
-						<label for="inky-btg-expiration"><?php esc_html_e( 'Validade da cobrança', 'inky-btg' ); ?></label>
+						<label for="inky-btg-expiration"><?php esc_html_e( 'Validade da cobrança', 'inky-pix-for-btg-pactual' ); ?></label>
 					</th>
 					<td>
 						<input type="number" id="inky-btg-expiration" name="expiration_minutes" min="5" max="1440" step="5" value="<?php echo esc_attr( (string) Inky_BTG_Settings::get_expiration_minutes() ); ?>" />
-						<?php esc_html_e( 'minutos', 'inky-btg' ); ?>
+						<?php esc_html_e( 'minutos', 'inky-pix-for-btg-pactual' ); ?>
 					</td>
 				</tr>
-				<tr><th scope="row"><?php esc_html_e( 'Unidade do valor', 'inky-btg' ); ?></th><td><?php esc_html_e( 'Reais, com duas casas decimais. Confira o valor exibido no teste de sandbox.', 'inky-btg' ); ?></td></tr>
+				<tr><th scope="row"><?php esc_html_e( 'Unidade do valor', 'inky-pix-for-btg-pactual' ); ?></th><td><?php esc_html_e( 'Reais, com duas casas decimais. Confira o valor exibido no teste de sandbox.', 'inky-pix-for-btg-pactual' ); ?></td></tr>
 				<tr>
-					<th scope="row"><?php esc_html_e( 'Verificação automática', 'inky-btg' ); ?></th>
+					<th scope="row"><?php esc_html_e( 'Verificação automática', 'inky-pix-for-btg-pactual' ); ?></th>
 					<td>
 						<label>
 							<input type="checkbox" name="polling_enabled" value="yes" <?php checked( 'yes', isset( $settings['polling_enabled'] ) ? $settings['polling_enabled'] : 'yes' ); ?> />
-							<?php esc_html_e( 'Consultar o status do pagamento periodicamente', 'inky-btg' ); ?>
+							<?php esc_html_e( 'Consultar o status do pagamento periodicamente', 'inky-pix-for-btg-pactual' ); ?>
 						</label>
 						<p class="description">
-							<?php esc_html_e( 'Recomendado manter ativo. Em produção, consulta o status caso o webhook não chegue. No sandbox, as respostas são simuladas e não confirmam pagamento real.', 'inky-btg' ); ?>
+							<?php esc_html_e( 'Recomendado manter ativo. Em produção, consulta o status caso o webhook não chegue. No sandbox, as respostas são simuladas e não confirmam pagamento real.', 'inky-pix-for-btg-pactual' ); ?>
 						</p>
 					</td>
 				</tr>
 			</table>
 
-			<?php submit_button( __( 'Salvar configurações de checkout', 'inky-btg' ) ); ?>
+			<?php submit_button( __( 'Salvar configurações de checkout', 'inky-pix-for-btg-pactual' ) ); ?>
 		</form>
 		<?php
 	}
@@ -653,24 +653,24 @@ class Inky_BTG_Admin {
 			<?php if ( $is_sandbox ) : ?>
 				<div class="notice notice-warning inline">
 					<p>
-						<?php esc_html_e( 'O BTG informa que webhooks do sandbox não estão disponíveis para todos. O cadastro de webhook mostrado no portal é de produção; configure o segredo de produção ao mudar o ambiente do plugin.', 'inky-btg' ); ?>
+						<?php esc_html_e( 'O BTG informa que webhooks do sandbox não estão disponíveis para todos. O cadastro de webhook mostrado no portal é de produção; configure o segredo de produção ao mudar o ambiente do plugin.', 'inky-pix-for-btg-pactual' ); ?>
 					</p>
 				</div>
 			<?php endif; ?>
 
 			<table class="form-table" role="presentation">
 				<tr>
-					<th scope="row"><?php esc_html_e( 'URL do webhook', 'inky-btg' ); ?></th>
+					<th scope="row"><?php esc_html_e( 'URL do webhook', 'inky-pix-for-btg-pactual' ); ?></th>
 					<td>
 						<code class="inky-btg-copyable"><?php echo esc_html( $webhook_url ); ?></code>
 						<p class="description">
-							<?php esc_html_e( 'Precisa ser HTTPS na porta 443. O BTG não aceita portas personalizadas.', 'inky-btg' ); ?>
+							<?php esc_html_e( 'Precisa ser HTTPS na porta 443. O BTG não aceita portas personalizadas.', 'inky-pix-for-btg-pactual' ); ?>
 						</p>
 					</td>
 				</tr>
 				<tr>
 					<th scope="row">
-						<label for="inky-btg-webhook-secret"><?php esc_html_e( 'Segredo do webhook', 'inky-btg' ); ?></label>
+						<label for="inky-btg-webhook-secret"><?php esc_html_e( 'Segredo do webhook', 'inky-pix-for-btg-pactual' ); ?></label>
 					</th>
 					<td>
 						<input
@@ -682,30 +682,30 @@ class Inky_BTG_Admin {
 							placeholder="<?php echo esc_attr( '' !== $secret ? Inky_BTG_Encryption::mask( $secret ) : '' ); ?>"
 						/>
 						<p class="description">
-							<?php esc_html_e( 'Informe somente o segredo real do webhook BTG, nunca um valor aleatório nem o Client Secret. Deixe em branco para manter o valor salvo.', 'inky-btg' ); ?>
+							<?php esc_html_e( 'Informe somente o segredo real do webhook BTG, nunca um valor aleatório nem o Client Secret. Deixe em branco para manter o valor salvo.', 'inky-pix-for-btg-pactual' ); ?>
 						</p>
 						<?php if ( '' !== $secret ) : ?>
 							<label>
 								<input type="checkbox" name="clear_webhook_secret" value="yes" />
-								<?php esc_html_e( 'Limpar o segredo salvo neste ambiente', 'inky-btg' ); ?>
+								<?php esc_html_e( 'Limpar o segredo salvo neste ambiente', 'inky-pix-for-btg-pactual' ); ?>
 							</label>
 						<?php endif; ?>
 					</td>
 				</tr>
 			</table>
 
-			<?php submit_button( __( 'Salvar webhook', 'inky-btg' ) ); ?>
+			<?php submit_button( __( 'Salvar webhook', 'inky-pix-for-btg-pactual' ) ); ?>
 		</form>
 
 		<hr />
 
-		<h2><?php esc_html_e( 'Como o plugin trata os eventos', 'inky-btg' ); ?></h2>
+		<h2><?php esc_html_e( 'Como o plugin trata os eventos', 'inky-pix-for-btg-pactual' ); ?></h2>
 		<ul class="inky-btg-list">
-			<li><?php esc_html_e( 'Eventos aceitos: instant-collection.paid e instant-collection.unlinked.', 'inky-btg' ); ?></li>
-			<li><?php esc_html_e( 'A resposta é enviada em menos de 10 segundos, como o BTG exige.', 'inky-btg' ); ?></li>
-			<li><?php esc_html_e( 'Entregas repetidas são identificadas pelo cabeçalho x-correlation-id e ignoradas.', 'inky-btg' ); ?></li>
-			<li><?php esc_html_e( 'No cadastro do endpoint BTG, deixe Tags em branco. O plugin envia a tag order em cada cobrança e também concilia pelo txId.', 'inky-btg' ); ?></li>
-			<li><?php esc_html_e( 'O pedido é localizado pelas tags enviadas na cobrança. Se elas não vierem, o plugin usa o txId.', 'inky-btg' ); ?></li>
+			<li><?php esc_html_e( 'Eventos aceitos: instant-collection.paid e instant-collection.unlinked.', 'inky-pix-for-btg-pactual' ); ?></li>
+			<li><?php esc_html_e( 'A resposta é enviada em menos de 10 segundos, como o BTG exige.', 'inky-pix-for-btg-pactual' ); ?></li>
+			<li><?php esc_html_e( 'Entregas repetidas são identificadas pelo cabeçalho x-correlation-id e ignoradas.', 'inky-pix-for-btg-pactual' ); ?></li>
+			<li><?php esc_html_e( 'No cadastro do endpoint BTG, deixe Tags em branco. O plugin envia a tag order em cada cobrança e também concilia pelo txId.', 'inky-pix-for-btg-pactual' ); ?></li>
+			<li><?php esc_html_e( 'O pedido é localizado pelas tags enviadas na cobrança. Se elas não vierem, o plugin usa o txId.', 'inky-pix-for-btg-pactual' ); ?></li>
 		</ul>
 		<?php
 	}
@@ -726,49 +726,49 @@ class Inky_BTG_Admin {
 
 			<table class="form-table" role="presentation">
 				<tr>
-					<th scope="row"><?php esc_html_e( 'Log detalhado', 'inky-btg' ); ?></th>
+					<th scope="row"><?php esc_html_e( 'Log detalhado', 'inky-pix-for-btg-pactual' ); ?></th>
 					<td>
 						<label>
 							<input type="checkbox" name="debug_logging" value="yes" <?php checked( 'yes', isset( $settings['debug_logging'] ) ? $settings['debug_logging'] : 'no' ); ?> />
-							<?php esc_html_e( 'Registrar chamadas e respostas da API', 'inky-btg' ); ?>
+							<?php esc_html_e( 'Registrar chamadas e respostas da API', 'inky-pix-for-btg-pactual' ); ?>
 						</label>
 						<p class="description">
-							<?php esc_html_e( 'Tokens, segredos e chaves PIX são sempre mascarados, mesmo com o log detalhado ligado.', 'inky-btg' ); ?>
+							<?php esc_html_e( 'Tokens, segredos e chaves PIX são sempre mascarados, mesmo com o log detalhado ligado.', 'inky-pix-for-btg-pactual' ); ?>
 						</p>
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><?php esc_html_e( 'Remover dados ao desinstalar', 'inky-btg' ); ?></th>
+					<th scope="row"><?php esc_html_e( 'Remover dados ao desinstalar', 'inky-pix-for-btg-pactual' ); ?></th>
 					<td>
 						<label>
 							<input type="checkbox" name="delete_data_on_uninstall" value="yes" <?php checked( 'yes', isset( $settings['delete_data_on_uninstall'] ) ? $settings['delete_data_on_uninstall'] : 'no' ); ?> />
-							<?php esc_html_e( 'Apagar configurações, credenciais e logs ao desinstalar o plugin', 'inky-btg' ); ?>
+							<?php esc_html_e( 'Apagar configurações, credenciais e logs ao desinstalar o plugin', 'inky-pix-for-btg-pactual' ); ?>
 						</label>
 					</td>
 				</tr>
 			</table>
 
-			<?php submit_button( __( 'Salvar diagnóstico', 'inky-btg' ) ); ?>
+			<?php submit_button( __( 'Salvar diagnóstico', 'inky-pix-for-btg-pactual' ) ); ?>
 		</form>
 
 		<hr />
 
-		<h2><?php esc_html_e( 'Verificar pagamento agora', 'inky-btg' ); ?></h2>
+		<h2><?php esc_html_e( 'Verificar pagamento agora', 'inky-pix-for-btg-pactual' ); ?></h2>
 		<p class="description">
-			<?php esc_html_e( 'Consulta o BTG na hora, sem esperar o próximo ciclo do polling. Use quando o cliente avisar que pagou e o pedido ainda estiver pendente.', 'inky-btg' ); ?>
+			<?php esc_html_e( 'Consulta o BTG na hora, sem esperar o próximo ciclo do polling. Use quando o cliente avisar que pagou e o pedido ainda estiver pendente.', 'inky-pix-for-btg-pactual' ); ?>
 		</p>
 		<p>
-			<label for="inky-btg-check-order-id"><?php esc_html_e( 'Número do pedido', 'inky-btg' ); ?></label>
+			<label for="inky-btg-check-order-id"><?php esc_html_e( 'Número do pedido', 'inky-pix-for-btg-pactual' ); ?></label>
 			<input type="number" min="1" step="1" id="inky-btg-check-order-id" class="small-text" />
-			<button type="button" class="button button-secondary" id="inky-btg-check-order"><?php esc_html_e( 'Verificar pagamento agora', 'inky-btg' ); ?></button>
+			<button type="button" class="button button-secondary" id="inky-btg-check-order"><?php esc_html_e( 'Verificar pagamento agora', 'inky-pix-for-btg-pactual' ); ?></button>
 			<span class="inky-btg-check-result" aria-live="polite"></span>
 		</p>
 
 		<hr />
 
-		<h2><?php esc_html_e( 'Últimos registros', 'inky-btg' ); ?></h2>
+		<h2><?php esc_html_e( 'Últimos registros', 'inky-pix-for-btg-pactual' ); ?></h2>
 		<p>
-			<button type="button" class="button" id="inky-btg-copy-log"><?php esc_html_e( 'Copiar log', 'inky-btg' ); ?></button>
+			<button type="button" class="button" id="inky-btg-copy-log"><?php esc_html_e( 'Copiar log', 'inky-pix-for-btg-pactual' ); ?></button>
 			<span class="inky-btg-copy-result" aria-live="polite"></span>
 		</p>
 		<textarea id="inky-btg-log-output" class="large-text code" rows="16" readonly><?php echo esc_textarea( $this->get_recent_log_lines() ); ?></textarea>
@@ -784,17 +784,17 @@ class Inky_BTG_Admin {
 		$questions = Inky_BTG_API_Contract::get_open_questions();
 
 		?>
-		<h2><?php esc_html_e( 'Itens aguardando confirmação', 'inky-btg' ); ?></h2>
+		<h2><?php esc_html_e( 'Itens aguardando confirmação', 'inky-pix-for-btg-pactual' ); ?></h2>
 		<p class="description">
-			<?php esc_html_e( 'Estes pontos não estão descritos na documentação pública do BTG. O plugin não inventou nenhum valor: onde não há confirmação, ele adota o comportamento mais seguro e avisa aqui.', 'inky-btg' ); ?>
+			<?php esc_html_e( 'Estes pontos não estão descritos na documentação pública do BTG. O plugin não inventou nenhum valor: onde não há confirmação, ele adota o comportamento mais seguro e avisa aqui.', 'inky-pix-for-btg-pactual' ); ?>
 		</p>
 
 		<table class="widefat striped inky-btg-pending-table">
 			<thead>
 				<tr>
-					<th scope="col"><?php esc_html_e( 'Item', 'inky-btg' ); ?></th>
-					<th scope="col"><?php esc_html_e( 'Situação', 'inky-btg' ); ?></th>
-					<th scope="col"><?php esc_html_e( 'O que fazer', 'inky-btg' ); ?></th>
+					<th scope="col"><?php esc_html_e( 'Item', 'inky-pix-for-btg-pactual' ); ?></th>
+					<th scope="col"><?php esc_html_e( 'Situação', 'inky-pix-for-btg-pactual' ); ?></th>
+					<th scope="col"><?php esc_html_e( 'O que fazer', 'inky-pix-for-btg-pactual' ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -806,9 +806,9 @@ class Inky_BTG_Admin {
 						</td>
 						<td>
 							<?php if ( ! empty( $question['resolved'] ) ) : ?>
-								<span class="inky-btg-status inky-btg-status-ok"><?php esc_html_e( 'Confirmado', 'inky-btg' ); ?></span>
+								<span class="inky-btg-status inky-btg-status-ok"><?php esc_html_e( 'Confirmado', 'inky-pix-for-btg-pactual' ); ?></span>
 							<?php else : ?>
-								<span class="inky-btg-status inky-btg-status-pending"><?php esc_html_e( 'Presumido', 'inky-btg' ); ?></span>
+								<span class="inky-btg-status inky-btg-status-pending"><?php esc_html_e( 'Presumido', 'inky-pix-for-btg-pactual' ); ?></span>
 							<?php endif; ?>
 						</td>
 						<td><?php echo esc_html( $question['action'] ); ?></td>
@@ -833,7 +833,7 @@ class Inky_BTG_Admin {
 
 		if ( ! current_user_can( INKY_BTG_CAPABILITY ) ) {
 			wp_send_json_error(
-				array( 'message' => __( 'Você não tem permissão para testar a conexão.', 'inky-btg' ) ),
+				array( 'message' => __( 'Você não tem permissão para testar a conexão.', 'inky-pix-for-btg-pactual' ) ),
 				403
 			);
 		}
@@ -844,17 +844,17 @@ class Inky_BTG_Admin {
 		// Etapa 1: credenciais salvas.
 		$has_creds = Inky_BTG_Settings::has_credentials( $env );
 		$steps[]   = $this->build_step(
-			__( 'Credenciais do aplicativo', 'inky-btg' ),
+			__( 'Credenciais do aplicativo', 'inky-pix-for-btg-pactual' ),
 			$has_creds,
 			$has_creds
-				? __( 'client_id e client_secret encontrados.', 'inky-btg' )
-				: __( 'Salve o client_id e o client_secret na aba Conexão.', 'inky-btg' )
+				? __( 'client_id e client_secret encontrados.', 'inky-pix-for-btg-pactual' )
+				: __( 'Salve o client_id e o client_secret na aba Conexão.', 'inky-pix-for-btg-pactual' )
 		);
 
 		if ( ! $has_creds ) {
 			wp_send_json_error(
 				array(
-					'message' => __( 'O checklist parou na primeira etapa.', 'inky-btg' ),
+					'message' => __( 'O checklist parou na primeira etapa.', 'inky-pix-for-btg-pactual' ),
 					'steps'   => $steps,
 				)
 			);
@@ -863,17 +863,17 @@ class Inky_BTG_Admin {
 		// Etapa 2: token de acesso válido.
 		$has_token = Inky_BTG_Token_Store::has_token( $env );
 		$steps[]   = $this->build_step(
-			__( 'Autorização OAuth', 'inky-btg' ),
+			__( 'Autorização OAuth', 'inky-pix-for-btg-pactual' ),
 			$has_token,
 			$has_token
-				? __( 'Token de acesso presente para este ambiente.', 'inky-btg' )
-				: __( 'Clique em Conectar e autorize o aplicativo no BTG.', 'inky-btg' )
+				? __( 'Token de acesso presente para este ambiente.', 'inky-pix-for-btg-pactual' )
+				: __( 'Clique em Conectar e autorize o aplicativo no BTG.', 'inky-pix-for-btg-pactual' )
 		);
 
 		if ( ! $has_token ) {
 			wp_send_json_error(
 				array(
-					'message' => __( 'O checklist parou na etapa de autorização.', 'inky-btg' ),
+					'message' => __( 'O checklist parou na etapa de autorização.', 'inky-pix-for-btg-pactual' ),
 					'steps'   => $steps,
 				)
 			);
@@ -882,32 +882,32 @@ class Inky_BTG_Admin {
 		// Etapa 3: token ainda dentro da validade.
 		$expired = Inky_BTG_Token_Store::is_expired( $env );
 		$steps[] = $this->build_step(
-			__( 'Validade do token', 'inky-btg' ),
+			__( 'Validade do token', 'inky-pix-for-btg-pactual' ),
 			! $expired,
 			$expired
-				? __( 'O token expirou. A renovação automática deve assumir na próxima chamada.', 'inky-btg' )
-				: __( 'Token dentro da validade.', 'inky-btg' )
+				? __( 'O token expirou. A renovação automática deve assumir na próxima chamada.', 'inky-pix-for-btg-pactual' )
+				: __( 'Token dentro da validade.', 'inky-pix-for-btg-pactual' )
 		);
 
 		// Etapa 4: companyId extraído da claim do token.
 		$company_id = Inky_BTG_Token_Store::get_company_id( $env );
 		$steps[]    = $this->build_step(
-			__( 'Identificador da empresa', 'inky-btg' ),
+			__( 'Identificador da empresa', 'inky-pix-for-btg-pactual' ),
 			! empty( $company_id ),
 			! empty( $company_id )
 				? sprintf(
 					/* translators: 1: CNPJ, 2: ambiente */
-					__( 'companyId %1$s lido da claim pix-cash-in do token (ambiente: %2$s).', 'inky-btg' ),
+					__( 'companyId %1$s lido da claim pix-cash-in do token (ambiente: %2$s).', 'inky-pix-for-btg-pactual' ),
 					$company_id,
-					'production' === $env ? __( 'Produção', 'inky-btg' ) : __( 'Sandbox', 'inky-btg' )
+					'production' === $env ? __( 'Produção', 'inky-pix-for-btg-pactual' ) : __( 'Sandbox', 'inky-pix-for-btg-pactual' )
 				)
-				: __( 'A claim pix-cash-in não trouxe o companyId. Verifique se o aplicativo tem o escopo de PIX habilitado.', 'inky-btg' )
+				: __( 'A claim pix-cash-in não trouxe o companyId. Verifique se o aplicativo tem o escopo de PIX habilitado.', 'inky-pix-for-btg-pactual' )
 		);
 
 		if ( empty( $company_id ) ) {
 			wp_send_json_error(
 				array(
-					'message' => __( 'O checklist parou na leitura do companyId.', 'inky-btg' ),
+					'message' => __( 'O checklist parou na leitura do companyId.', 'inky-pix-for-btg-pactual' ),
 					'steps'   => $steps,
 				)
 			);
@@ -919,14 +919,14 @@ class Inky_BTG_Admin {
 
 		if ( is_wp_error( $client ) ) {
 			$steps[] = $this->build_step(
-				__( 'Chamada autenticada à API', 'inky-btg' ),
+				__( 'Chamada autenticada à API', 'inky-pix-for-btg-pactual' ),
 				false,
 				$client->get_error_message()
 			);
 
 			wp_send_json_error(
 				array(
-					'message' => __( 'O checklist parou na chamada à API.', 'inky-btg' ),
+					'message' => __( 'O checklist parou na chamada à API.', 'inky-pix-for-btg-pactual' ),
 					'steps'   => $steps,
 				)
 			);
@@ -937,23 +937,23 @@ class Inky_BTG_Admin {
 
 		if ( is_wp_error( $response ) ) {
 			$steps[] = $this->build_step(
-				__( 'Chamada autenticada à API', 'inky-btg' ),
+				__( 'Chamada autenticada à API', 'inky-pix-for-btg-pactual' ),
 				false,
 				$response->get_error_message()
 			);
 
 			wp_send_json_error(
 				array(
-					'message' => __( 'O checklist parou na chamada à API.', 'inky-btg' ),
+					'message' => __( 'O checklist parou na chamada à API.', 'inky-pix-for-btg-pactual' ),
 					'steps'   => $steps,
 				)
 			);
 		}
 
 		$steps[] = $this->build_step(
-			__( 'Chamada autenticada à API', 'inky-btg' ),
+			__( 'Chamada autenticada à API', 'inky-pix-for-btg-pactual' ),
 			true,
-			__( 'A API respondeu à listagem de locations.', 'inky-btg' )
+			__( 'A API respondeu à listagem de locations.', 'inky-pix-for-btg-pactual' )
 		);
 
 		// Etapa 6: webhook configurado (informativo no sandbox).
@@ -962,26 +962,26 @@ class Inky_BTG_Admin {
 
 		if ( 'sandbox' === $env ) {
 			$steps[] = $this->build_step(
-				__( 'Webhook', 'inky-btg' ),
+				__( 'Webhook', 'inky-pix-for-btg-pactual' ),
 				true,
 				$webhook_ready
-					? __( 'Segredo salvo. O sandbox não comprova liquidação; confirme pagamentos reais apenas em produção.', 'inky-btg' )
-					: __( 'Webhook de sandbox indisponível para muitos usuários. O teste de pagamento real exige produção.', 'inky-btg' ),
+					? __( 'Segredo salvo. O sandbox não comprova liquidação; confirme pagamentos reais apenas em produção.', 'inky-pix-for-btg-pactual' )
+					: __( 'Webhook de sandbox indisponível para muitos usuários. O teste de pagamento real exige produção.', 'inky-pix-for-btg-pactual' ),
 				true
 			);
 		} else {
 			$steps[] = $this->build_step(
-				__( 'Webhook', 'inky-btg' ),
+				__( 'Webhook', 'inky-pix-for-btg-pactual' ),
 			$webhook_ready,
 			$webhook_ready
-				? __( 'Segredo informado. A autenticação só é validada quando o BTG entrega um evento real.', 'inky-btg' )
-					: __( 'Cadastre o segredo do webhook na aba Webhook para validar as notificações.', 'inky-btg' )
+				? __( 'Segredo informado. A autenticação só é validada quando o BTG entrega um evento real.', 'inky-pix-for-btg-pactual' )
+					: __( 'Cadastre o segredo do webhook na aba Webhook para validar as notificações.', 'inky-pix-for-btg-pactual' )
 			);
 		}
 
 		wp_send_json_success(
 			array(
-				'message' => __( 'Todas as etapas foram concluídas.', 'inky-btg' ),
+				'message' => __( 'Todas as etapas foram concluídas.', 'inky-pix-for-btg-pactual' ),
 				'steps'   => $steps,
 			)
 		);
@@ -1019,7 +1019,7 @@ class Inky_BTG_Admin {
 
 		if ( ! current_user_can( INKY_BTG_CAPABILITY ) ) {
 			wp_send_json_error(
-				array( 'message' => __( 'Você não tem permissão para consultar pedidos.', 'inky-btg' ) ),
+				array( 'message' => __( 'Você não tem permissão para consultar pedidos.', 'inky-pix-for-btg-pactual' ) ),
 				403
 			);
 		}
@@ -1029,7 +1029,7 @@ class Inky_BTG_Admin {
 
 		if ( ! $order ) {
 			wp_send_json_error(
-				array( 'message' => __( 'Pedido não encontrado.', 'inky-btg' ) ),
+				array( 'message' => __( 'Pedido não encontrado.', 'inky-pix-for-btg-pactual' ) ),
 				404
 			);
 		}
@@ -1046,10 +1046,10 @@ class Inky_BTG_Admin {
 				'paid'    => ! empty( $result['paid'] ),
 				'status'  => isset( $result['status'] ) ? (string) $result['status'] : '',
 				'message' => ! empty( $result['paid'] )
-					? __( 'Pagamento confirmado. O pedido foi marcado como pago.', 'inky-btg' )
+					? __( 'Pagamento confirmado. O pedido foi marcado como pago.', 'inky-pix-for-btg-pactual' )
 					: ( ! empty( $result['simulated'] )
-						? __( 'Resposta de sandbox simulada; nenhum pagamento real foi confirmado e o pedido não foi marcado como pago.', 'inky-btg' )
-						: __( 'O BTG ainda não registrou o pagamento desta cobrança.', 'inky-btg' ) ),
+						? __( 'Resposta de sandbox simulada; nenhum pagamento real foi confirmado e o pedido não foi marcado como pago.', 'inky-pix-for-btg-pactual' )
+						: __( 'O BTG ainda não registrou o pagamento desta cobrança.', 'inky-pix-for-btg-pactual' ) ),
 			)
 		);
 	}
@@ -1089,7 +1089,7 @@ class Inky_BTG_Admin {
 		);
 
 		if ( empty( $rows ) ) {
-			$header[] = __( 'Nenhum registro encontrado.', 'inky-btg' );
+			$header[] = __( 'Nenhum registro encontrado.', 'inky-pix-for-btg-pactual' );
 
 			return implode( "\n", $header );
 		}
@@ -1119,7 +1119,7 @@ class Inky_BTG_Admin {
 	 */
 	public function handle_save() {
 		if ( ! current_user_can( INKY_BTG_CAPABILITY ) ) {
-			wp_die( esc_html__( 'Você não tem permissão para salvar estas configurações.', 'inky-btg' ) );
+			wp_die( esc_html__( 'Você não tem permissão para salvar estas configurações.', 'inky-pix-for-btg-pactual' ) );
 		}
 
 		check_admin_referer( self::NONCE_SAVE, self::NONCE_SAVE );
@@ -1178,7 +1178,7 @@ class Inky_BTG_Admin {
 		Inky_BTG_Settings::save_credentials( $environment, $credentials );
 
 		Inky_BTG_Logger::info(
-			__( 'Configurações de conexão atualizadas.', 'inky-btg' ),
+			__( 'Configurações de conexão atualizadas.', 'inky-pix-for-btg-pactual' ),
 			array( 'source' => 'admin' )
 		);
 	}
@@ -1212,7 +1212,7 @@ class Inky_BTG_Admin {
 		update_option( 'woocommerce_' . Inky_BTG_Gateway::ID . '_settings', $gateway_options, false );
 
 		Inky_BTG_Logger::info(
-			__( 'Configurações de checkout atualizadas.', 'inky-btg' ),
+			__( 'Configurações de checkout atualizadas.', 'inky-pix-for-btg-pactual' ),
 			array(
 				'source'      => 'admin',
 				'amount_unit' => $unit,
@@ -1236,7 +1236,7 @@ class Inky_BTG_Admin {
 		}
 
 		Inky_BTG_Logger::info(
-			__( 'Configurações de webhook atualizadas.', 'inky-btg' ),
+			__( 'Configurações de webhook atualizadas.', 'inky-pix-for-btg-pactual' ),
 			array( 'source' => 'admin' )
 		);
 	}
@@ -1255,7 +1255,7 @@ class Inky_BTG_Admin {
 		);
 
 		Inky_BTG_Logger::info(
-			__( 'Configurações de diagnóstico atualizadas.', 'inky-btg' ),
+			__( 'Configurações de diagnóstico atualizadas.', 'inky-pix-for-btg-pactual' ),
 			array( 'source' => 'admin' )
 		);
 	}

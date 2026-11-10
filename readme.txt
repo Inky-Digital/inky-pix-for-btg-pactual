@@ -1,4 +1,4 @@
-=== Inky BTG ===
+=== Inky Pix for BTG Pactual ===
 Contributors: inkydigital
 Tags: pix, btg, btg pactual, woocommerce, payment gateway
 Requires at least: 6.2
@@ -13,7 +13,7 @@ Accept Pix through BTG Pactual Empresas in WooCommerce: QR Code, copy and paste 
 
 == Description ==
 
-Inky BTG is a Pix payment gateway for WooCommerce stores that receive payments in a **BTG Pactual Empresas** business account, using the bank's Pix Collection (Pix Cobrança) API.
+Inky Pix for BTG Pactual is a Pix payment gateway for WooCommerce stores that receive payments in a **BTG Pactual Empresas** business account, using the bank's Pix Collection (Pix Cobrança) API.
 
 The customer places the order, sees the QR Code and the copy and paste code on the store itself, pays in their banking app, and the order is marked as paid without anyone checking the bank statement.
 
@@ -34,7 +34,7 @@ The plugin interface is in Brazilian Portuguese, since Pix is the Brazilian inst
 
 This is an unofficial plugin, not affiliated with or endorsed by BTG Pactual. BTG Pactual is a trademark of its owner. Developed and maintained by [Inky Digital](https://inkydigital.com.br), which builds custom integrations between stores, ERPs and payment providers.
 
-Source code and issues: [github.com/Inky-Digital/inky-btg](https://github.com/Inky-Digital/inky-btg).
+Source code and issues: [github.com/Inky-Digital/inky-pix-for-btg-pactual](https://github.com/Inky-Digital/inky-pix-for-btg-pactual).
 
 == Installation ==
 

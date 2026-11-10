@@ -62,7 +62,7 @@ class Inky_BTG_Ajax {
 
 		if ( ! $order_id ) {
 			wp_send_json_error(
-				array( 'message' => __( 'Pedido inválido.', 'inky-btg' ) ),
+				array( 'message' => __( 'Pedido inválido.', 'inky-pix-for-btg-pactual' ) ),
 				400
 			);
 		}
@@ -71,14 +71,14 @@ class Inky_BTG_Ajax {
 
 		if ( ! $order ) {
 			wp_send_json_error(
-				array( 'message' => __( 'Pedido não encontrado.', 'inky-btg' ) ),
+				array( 'message' => __( 'Pedido não encontrado.', 'inky-pix-for-btg-pactual' ) ),
 				404
 			);
 		}
 
 		if ( ! $this->can_view_order( $order ) ) {
 			wp_send_json_error(
-				array( 'message' => __( 'Você não tem permissão para consultar este pedido.', 'inky-btg' ) ),
+				array( 'message' => __( 'Você não tem permissão para consultar este pedido.', 'inky-pix-for-btg-pactual' ) ),
 				403
 			);
 		}
@@ -87,7 +87,7 @@ class Inky_BTG_Ajax {
 			wp_send_json_success(
 				array(
 					'paid'    => true,
-					'message' => __( 'Pagamento confirmado. Obrigado!', 'inky-btg' ),
+					'message' => __( 'Pagamento confirmado. Obrigado!', 'inky-pix-for-btg-pactual' ),
 				)
 			);
 		}
@@ -105,7 +105,7 @@ class Inky_BTG_Ajax {
 			wp_send_json_success(
 				array(
 					'paid'    => true,
-					'message' => __( 'Pagamento confirmado. Obrigado!', 'inky-btg' ),
+					'message' => __( 'Pagamento confirmado. Obrigado!', 'inky-pix-for-btg-pactual' ),
 				)
 			);
 		}
@@ -114,7 +114,7 @@ class Inky_BTG_Ajax {
 			wp_send_json_success(
 				array(
 					'paid'    => false,
-					'message' => __( 'Teste em sandbox: a resposta do BTG é simulada e não confirma pagamento real.', 'inky-btg' ),
+					'message' => __( 'Teste em sandbox: a resposta do BTG é simulada e não confirma pagamento real.', 'inky-pix-for-btg-pactual' ),
 				)
 			);
 		}
@@ -124,7 +124,7 @@ class Inky_BTG_Ajax {
 				'paid'    => false,
 				'message' => __(
 					'Ainda não identificamos o pagamento. Se você acabou de pagar, aguarde alguns instantes e tente de novo.',
-					'inky-btg'
+					'inky-pix-for-btg-pactual'
 				),
 			)
 		);

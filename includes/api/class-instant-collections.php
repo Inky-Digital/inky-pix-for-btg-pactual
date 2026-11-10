@@ -88,7 +88,7 @@ class Inky_BTG_Instant_Collections {
 		 * única vez, para não entrar em laço.
 		 */
 		Inky_BTG_Logger::info(
-			__( 'A API pediu uma location antes da cobrança. Criando o QR Code e repetindo a operação.', 'inky-btg' ),
+			__( 'A API pediu uma location antes da cobrança. Criando o QR Code e repetindo a operação.', 'inky-pix-for-btg-pactual' ),
 			array( 'source' => 'instant-collections' )
 		);
 
@@ -119,7 +119,7 @@ class Inky_BTG_Instant_Collections {
 		if ( '' === $path ) {
 			return new WP_Error(
 				'inky_btg_missing_endpoint',
-				__( 'O caminho de criação de cobrança não está definido no contrato.', 'inky-btg' )
+				__( 'O caminho de criação de cobrança não está definido no contrato.', 'inky-pix-for-btg-pactual' )
 			);
 		}
 
@@ -157,7 +157,7 @@ class Inky_BTG_Instant_Collections {
 		if ( '' === $location_id ) {
 			return new WP_Error(
 				'inky_btg_location_id_missing',
-				__( 'A API criou o QR Code, mas não devolveu o identificador.', 'inky-btg' )
+				__( 'A API criou o QR Code, mas não devolveu o identificador.', 'inky-pix-for-btg-pactual' )
 			);
 		}
 
@@ -208,7 +208,7 @@ class Inky_BTG_Instant_Collections {
 		if ( '' === $base ) {
 			return new WP_Error(
 				'inky_btg_missing_endpoint',
-				__( 'O caminho de consulta de cobranças não está definido no contrato.', 'inky-btg' )
+				__( 'O caminho de consulta de cobranças não está definido no contrato.', 'inky-pix-for-btg-pactual' )
 			);
 		}
 
@@ -266,7 +266,7 @@ class Inky_BTG_Instant_Collections {
 		if ( '' === $path ) {
 			return new WP_Error(
 				'inky_btg_missing_endpoint',
-				__( 'O caminho de listagem de cobranças não está definido no contrato.', 'inky-btg' )
+				__( 'O caminho de listagem de cobranças não está definido no contrato.', 'inky-pix-for-btg-pactual' )
 			);
 		}
 

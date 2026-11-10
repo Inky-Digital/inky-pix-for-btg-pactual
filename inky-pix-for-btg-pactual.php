@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name:       Inky BTG
- * Plugin URI:        https://github.com/Inky-Digital/inky-btg
+ * Plugin Name:       Inky Pix for BTG Pactual
+ * Plugin URI:        https://github.com/Inky-Digital/inky-pix-for-btg-pactual
  * Description:       Pix payments through BTG Pactual Empresas for WooCommerce: QR Code, copy and paste code, webhook and automatic order confirmation. Unofficial plugin, not affiliated with BTG Pactual.
  * Version:           0.2.2
  * Requires at least: 6.2
@@ -10,7 +10,7 @@
  * Author URI:        https://inkydigital.com.br
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       inky-btg
+ * Text Domain:       inky-pix-for-btg-pactual
  * Domain Path:       /languages
  * WC requires at least: 7.1
  * Requires Plugins:  woocommerce
@@ -38,7 +38,7 @@ define( 'INKY_BTG_BASENAME', plugin_basename( __FILE__ ) );
  * O briefing já define a rota de callback como
  * `wp-json/inky-btg/v1/oauth/callback`, portanto o slug é fixo.
  */
-define( 'INKY_BTG_SLUG', 'inky-btg' );
+define( 'INKY_BTG_SLUG', 'inky-pix-for-btg-pactual' );
 
 /**
  * Namespace das rotas REST.
@@ -171,7 +171,7 @@ function inky_btg_render_missing_woocommerce_notice() {
 		'<div class="notice notice-error"><p>%s</p></div>',
 		esc_html__(
 			'O plugin PIX BTG Pactual para WooCommerce precisa do WooCommerce instalado e ativo para funcionar.',
-			'inky-btg'
+			'inky-pix-for-btg-pactual'
 		)
 	);
 }

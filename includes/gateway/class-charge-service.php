@@ -71,7 +71,7 @@ class Inky_BTG_Charge_Service {
 			$order->add_order_note(
 				sprintf(
 					/* translators: %s: mensagem de erro. */
-					__( 'Não foi possível gerar a cobrança PIX: %s', 'inky-btg' ),
+					__( 'Não foi possível gerar a cobrança PIX: %s', 'inky-pix-for-btg-pactual' ),
 					$result->get_error_message()
 				)
 			);
@@ -97,7 +97,7 @@ class Inky_BTG_Charge_Service {
 		$existing = $this->get_from_order( $order );
 		if ( ! empty( $existing['txid'] ) ) {
 			return empty( $existing['emv'] ) && empty( $existing['qr_image'] )
-				? new WP_Error( 'inky_btg_incomplete_charge', __( 'A cobrança anterior precisa de conferência no BTG antes de nova tentativa.', 'inky-btg' ) )
+				? new WP_Error( 'inky_btg_incomplete_charge', __( 'A cobrança anterior precisa de conferência no BTG antes de nova tentativa.', 'inky-pix-for-btg-pactual' ) )
 				: $existing;
 		}
 		$lock = 'inky_btg_create_' . $order->get_id();
@@ -106,7 +106,7 @@ class Inky_BTG_Charge_Service {
 			delete_option( $lock );
 		}
 		if ( ! add_option( $lock, time(), '', 'no' ) ) {
-			return new WP_Error( 'inky_btg_charge_busy', __( 'Esta cobrança Pix já está sendo gerada. Aguarde alguns segundos.', 'inky-btg' ) );
+			return new WP_Error( 'inky_btg_charge_busy', __( 'Esta cobrança Pix já está sendo gerada. Aguarde alguns segundos.', 'inky-pix-for-btg-pactual' ) );
 		}
 		try {
 			return $this->create_for_order_unlocked( $order );
@@ -123,10 +123,10 @@ class Inky_BTG_Charge_Service {
 			return $existing;
 		}
 		if ( 'BRL' !== $order->get_currency() || (float) $order->get_total() <= 0 ) {
-			return new WP_Error( 'inky_btg_invalid_order', __( 'O Pix BTG exige um pedido em reais com valor maior que zero.', 'inky-btg' ) );
+			return new WP_Error( 'inky_btg_invalid_order', __( 'O Pix BTG exige um pedido em reais com valor maior que zero.', 'inky-pix-for-btg-pactual' ) );
 		}
 		if ( ! Inky_BTG_Settings::has_pix_key() ) {
-			return new WP_Error( 'inky_btg_missing_pix_key', __( 'A chave Pix da loja não foi configurada.', 'inky-btg' ) );
+			return new WP_Error( 'inky_btg_missing_pix_key', __( 'A chave Pix da loja não foi configurada.', 'inky-pix-for-btg-pactual' ) );
 		}
 		$environment = Inky_BTG_Settings::get_environment();
 		$company_id  = Inky_BTG_Gateway::get_company_id( $environment );
@@ -136,7 +136,7 @@ class Inky_BTG_Charge_Service {
 				'inky_btg_missing_company_id',
 				__(
 					'A conta conectada não informou o CNPJ da empresa. Reconecte a conta na tela de Ajustes.',
-					'inky-btg'
+					'inky-pix-for-btg-pactual'
 				)
 			);
 		}
@@ -175,7 +175,7 @@ class Inky_BTG_Charge_Service {
 				'inky_btg_incomplete_charge',
 				__(
 					'A API respondeu sem o identificador da cobrança. Consulte o suporte do BTG antes de repetir esta cobrança.',
-					'inky-btg'
+					'inky-pix-for-btg-pactual'
 				)
 			);
 		}
@@ -193,7 +193,7 @@ class Inky_BTG_Charge_Service {
 
 		$this->store_on_order( $order, $data );
 		if ( '' === $emv && '' === $data['qr_image'] ) {
-			return new WP_Error( 'inky_btg_incomplete_charge', __( 'O BTG criou a cobrança, mas não devolveu QR Code nem código Pix. Verifique a cobrança no BTG.', 'inky-btg' ) );
+			return new WP_Error( 'inky_btg_incomplete_charge', __( 'O BTG criou a cobrança, mas não devolveu QR Code nem código Pix. Verifique a cobrança no BTG.', 'inky-pix-for-btg-pactual' ) );
 		}
 
 		/*
@@ -258,7 +258,7 @@ class Inky_BTG_Charge_Service {
 		if ( empty( $data['txid'] ) ) {
 			return new WP_Error(
 				'inky_btg_missing_txid',
-				__( 'Este pedido ainda não tem uma cobrança PIX gerada.', 'inky-btg' )
+				__( 'Este pedido ainda não tem uma cobrança PIX gerada.', 'inky-pix-for-btg-pactual' )
 			);
 		}
 
@@ -268,7 +268,7 @@ class Inky_BTG_Charge_Service {
 		if ( '' === $company_id ) {
 			return new WP_Error(
 				'inky_btg_missing_company_id',
-				__( 'A cobrança não tem o CNPJ da empresa registrado.', 'inky-btg' )
+				__( 'A cobrança não tem o CNPJ da empresa registrado.', 'inky-pix-for-btg-pactual' )
 			);
 		}
 
@@ -351,7 +351,7 @@ class Inky_BTG_Charge_Service {
 		}
 
 		$order->add_order_note(
-			__( 'Pagamento PIX confirmado pelo BTG Pactual.', 'inky-btg' )
+			__( 'Pagamento PIX confirmado pelo BTG Pactual.', 'inky-pix-for-btg-pactual' )
 		);
 		Inky_BTG_Scheduler::cancel_order( $order->get_id() );
 		delete_option( $lock_key );
@@ -419,7 +419,7 @@ class Inky_BTG_Charge_Service {
 
 		return sprintf(
 			/* translators: 1: nome da loja, 2: número do pedido. */
-			__( '%1$s - Pedido %2$s', 'inky-btg' ),
+			__( '%1$s - Pedido %2$s', 'inky-pix-for-btg-pactual' ),
 			$store,
 			$order->get_order_number()
 		);
@@ -434,7 +434,7 @@ class Inky_BTG_Charge_Service {
 	private function build_description( $order ) {
 		return sprintf(
 			/* translators: %s: número do pedido. */
-			__( 'Cobrança PIX do pedido %s', 'inky-btg' ),
+			__( 'Cobrança PIX do pedido %s', 'inky-pix-for-btg-pactual' ),
 			$order->get_order_number()
 		);
 	}

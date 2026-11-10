@@ -48,7 +48,7 @@ class Inky_BTG_Locations {
 		if ( '' === $path ) {
 			return new WP_Error(
 				'inky_btg_missing_endpoint',
-				__( 'O caminho de criação de QR Code não está definido no contrato.', 'inky-btg' )
+				__( 'O caminho de criação de QR Code não está definido no contrato.', 'inky-pix-for-btg-pactual' )
 			);
 		}
 
@@ -77,7 +77,7 @@ class Inky_BTG_Locations {
 		if ( '' === $path ) {
 			return new WP_Error(
 				'inky_btg_missing_endpoint',
-				__( 'O caminho de listagem de QR Codes não está definido no contrato.', 'inky-btg' )
+				__( 'O caminho de listagem de QR Codes não está definido no contrato.', 'inky-pix-for-btg-pactual' )
 			);
 		}
 
@@ -106,7 +106,7 @@ class Inky_BTG_Locations {
 		if ( '' === $method ) {
 			return new WP_Error(
 				'inky_btg_unlink_method_unknown',
-				__( 'O método de desvincular QR Code ainda não foi confirmado na documentação.', 'inky-btg' )
+				__( 'O método de desvincular QR Code ainda não foi confirmado na documentação.', 'inky-pix-for-btg-pactual' )
 			);
 		}
 
@@ -121,7 +121,7 @@ class Inky_BTG_Locations {
 		if ( '' === $path ) {
 			return new WP_Error(
 				'inky_btg_missing_endpoint',
-				__( 'O caminho de desvincular QR Code não está definido no contrato.', 'inky-btg' )
+				__( 'O caminho de desvincular QR Code não está definido no contrato.', 'inky-pix-for-btg-pactual' )
 			);
 		}
 

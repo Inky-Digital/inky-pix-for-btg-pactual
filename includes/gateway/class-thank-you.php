@@ -73,9 +73,9 @@ class Inky_BTG_Thank_You {
 			array(
 				'ajaxUrl' => admin_url( 'admin-ajax.php' ),
 				'nonce'   => wp_create_nonce( 'inky_btg_check_payment' ),
-				'copied'  => __( 'Código copiado!', 'inky-btg' ),
-				'copy'    => __( 'Copiar código', 'inky-btg' ),
-				'error'   => __( 'Não foi possível copiar. Selecione o código e copie manualmente.', 'inky-btg' ),
+				'copied'  => __( 'Código copiado!', 'inky-pix-for-btg-pactual' ),
+				'copy'    => __( 'Copiar código', 'inky-pix-for-btg-pactual' ),
+				'error'   => __( 'Não foi possível copiar. Selecione o código e copie manualmente.', 'inky-pix-for-btg-pactual' ),
 			)
 		);
 	}
@@ -128,14 +128,14 @@ class Inky_BTG_Thank_You {
 		?>
 		<div class="inky-btg-pix" id="inky-btg-pix">
 			<h2 class="inky-btg-pix__title">
-				<?php esc_html_e( 'Pague com PIX para confirmar o pedido', 'inky-btg' ); ?>
+				<?php esc_html_e( 'Pague com PIX para confirmar o pedido', 'inky-pix-for-btg-pactual' ); ?>
 			</h2>
 
 			<p class="inky-btg-pix__intro">
 				<?php
 				esc_html_e(
 					'Abra o aplicativo do seu banco, escolha pagar com PIX e aponte a câmera para o QR Code abaixo. Você também pode usar o código copia e cola.',
-					'inky-btg'
+					'inky-pix-for-btg-pactual'
 				);
 				?>
 			</p>
@@ -144,7 +144,7 @@ class Inky_BTG_Thank_You {
 				<div class="inky-btg-pix__qr">
 					<img
 						src="<?php echo esc_url( $qr_image ); ?>"
-						alt="<?php esc_attr_e( 'QR Code para pagamento via PIX', 'inky-btg' ); ?>"
+						alt="<?php esc_attr_e( 'QR Code para pagamento via PIX', 'inky-pix-for-btg-pactual' ); ?>"
 						width="260"
 						height="260"
 					/>
@@ -154,7 +154,7 @@ class Inky_BTG_Thank_You {
 			<?php if ( '' !== $emv ) : ?>
 				<div class="inky-btg-pix__code">
 					<label for="inky-btg-emv" class="inky-btg-pix__label">
-						<?php esc_html_e( 'Código copia e cola', 'inky-btg' ); ?>
+						<?php esc_html_e( 'Código copia e cola', 'inky-pix-for-btg-pactual' ); ?>
 					</label>
 					<textarea
 						id="inky-btg-emv"
@@ -169,7 +169,7 @@ class Inky_BTG_Thank_You {
 						class="button inky-btg-pix__copy"
 						data-inky-btg-copy="#inky-btg-emv"
 					>
-						<?php esc_html_e( 'Copiar código', 'inky-btg' ); ?>
+						<?php esc_html_e( 'Copiar código', 'inky-pix-for-btg-pactual' ); ?>
 					</button>
 				</div>
 			<?php endif; ?>
@@ -179,7 +179,7 @@ class Inky_BTG_Thank_You {
 					<?php
 					printf(
 						/* translators: %s: data e hora de expiração. */
-						esc_html__( 'Este código é válido até %s.', 'inky-btg' ),
+						esc_html__( 'Este código é válido até %s.', 'inky-pix-for-btg-pactual' ),
 						esc_html( date_i18n( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), $expires ) )
 					);
 					?>
@@ -187,7 +187,7 @@ class Inky_BTG_Thank_You {
 			<?php endif; ?>
 
 			<p class="inky-btg-pix__status" id="inky-btg-status" aria-live="polite">
-				<?php esc_html_e( 'Aguardando a confirmação do pagamento. Esta página é atualizada automaticamente.', 'inky-btg' ); ?>
+				<?php esc_html_e( 'Aguardando a confirmação do pagamento. Esta página é atualizada automaticamente.', 'inky-pix-for-btg-pactual' ); ?>
 			</p>
 
 			<p class="inky-btg-pix__actions">
@@ -196,7 +196,7 @@ class Inky_BTG_Thank_You {
 					class="button alt inky-btg-pix__verify"
 					data-inky-btg-verify="<?php echo esc_attr( (string) $order->get_id() ); ?>"
 				>
-					<?php esc_html_e( 'Já paguei, verificar agora', 'inky-btg' ); ?>
+					<?php esc_html_e( 'Já paguei, verificar agora', 'inky-pix-for-btg-pactual' ); ?>
 				</button>
 			</p>
 		</div>
@@ -211,7 +211,7 @@ class Inky_BTG_Thank_You {
 	private function render_paid_notice() {
 		?>
 		<div class="woocommerce-message inky-btg-pix__notice" role="status">
-			<?php esc_html_e( 'Pagamento confirmado. Obrigado!', 'inky-btg' ); ?>
+			<?php esc_html_e( 'Pagamento confirmado. Obrigado!', 'inky-pix-for-btg-pactual' ); ?>
 		</div>
 		<?php
 	}
@@ -227,7 +227,7 @@ class Inky_BTG_Thank_You {
 			<?php
 			esc_html_e(
 				'A cobrança PIX ainda não está disponível. Atualize a página em alguns instantes ou fale com a loja.',
-				'inky-btg'
+				'inky-pix-for-btg-pactual'
 			);
 			?>
 		</div>
@@ -245,7 +245,7 @@ class Inky_BTG_Thank_You {
 			<?php
 			esc_html_e(
 				'O código PIX deste pedido expirou. Fale com a loja para gerar um novo código.',
-				'inky-btg'
+				'inky-pix-for-btg-pactual'
 			);
 			?>
 		</div>

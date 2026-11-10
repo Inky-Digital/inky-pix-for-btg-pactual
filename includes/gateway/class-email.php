@@ -131,14 +131,14 @@ class Inky_BTG_Email {
 		?>
 		<div style="margin: 24px 0; padding: 16px; border: 1px solid #e5e5e5; border-radius: 6px; text-align: center;">
 			<h2 style="margin: 0 0 12px; font-size: 18px;">
-				<?php esc_html_e( 'Pague com PIX para confirmar o pedido', 'inky-btg' ); ?>
+				<?php esc_html_e( 'Pague com PIX para confirmar o pedido', 'inky-pix-for-btg-pactual' ); ?>
 			</h2>
 
 			<p style="margin: 0 0 16px; color: #555;">
 				<?php
 				esc_html_e(
 					'Abra o aplicativo do seu banco, escolha pagar com PIX e aponte a câmera para o QR Code abaixo. Você também pode usar o código copia e cola.',
-					'inky-btg'
+					'inky-pix-for-btg-pactual'
 				);
 				?>
 			</p>
@@ -147,7 +147,7 @@ class Inky_BTG_Email {
 				<p style="margin: 0 0 16px;">
 					<img
 						src="<?php echo esc_url( $qr_image ); ?>"
-						alt="<?php esc_attr_e( 'QR Code para pagamento via PIX', 'inky-btg' ); ?>"
+						alt="<?php esc_attr_e( 'QR Code para pagamento via PIX', 'inky-pix-for-btg-pactual' ); ?>"
 						width="220"
 						height="220"
 						style="display: inline-block;"
@@ -157,7 +157,7 @@ class Inky_BTG_Email {
 
 			<?php if ( '' !== $emv ) : ?>
 				<p style="margin: 0 0 8px; font-weight: 600;">
-					<?php esc_html_e( 'Código copia e cola', 'inky-btg' ); ?>
+					<?php esc_html_e( 'Código copia e cola', 'inky-pix-for-btg-pactual' ); ?>
 				</p>
 				<p style="margin: 0; padding: 10px; background: #f7f7f7; border-radius: 4px; font-family: monospace; font-size: 12px; word-break: break-all;">
 					<?php echo esc_html( $emv ); ?>
@@ -169,7 +169,7 @@ class Inky_BTG_Email {
 					<?php
 					printf(
 						/* translators: %s: data e hora de expiração. */
-						esc_html__( 'Este código é válido até %s.', 'inky-btg' ),
+						esc_html__( 'Este código é válido até %s.', 'inky-pix-for-btg-pactual' ),
 						esc_html( date_i18n( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), (int) $data['expires_at'] ) )
 					);
 					?>
@@ -191,18 +191,18 @@ class Inky_BTG_Email {
 
 		echo "\n";
 
-		echo esc_html__( 'Pague com PIX para confirmar o pedido', 'inky-btg' ) . "\n";
-		echo esc_html__( 'Abra o aplicativo do seu banco, escolha pagar com PIX e use o código abaixo.', 'inky-btg' ) . "\n\n";
+		echo esc_html__( 'Pague com PIX para confirmar o pedido', 'inky-pix-for-btg-pactual' ) . "\n";
+		echo esc_html__( 'Abra o aplicativo do seu banco, escolha pagar com PIX e use o código abaixo.', 'inky-pix-for-btg-pactual' ) . "\n\n";
 
 		if ( '' !== $emv ) {
-			echo esc_html__( 'Código copia e cola:', 'inky-btg' ) . "\n";
+			echo esc_html__( 'Código copia e cola:', 'inky-pix-for-btg-pactual' ) . "\n";
 			echo esc_html( $emv ) . "\n\n";
 		}
 
 		if ( ! empty( $data['expires_at'] ) ) {
 			printf(
 				/* translators: %s: data e hora de expiração. */
-				esc_html__( 'Este código é válido até %s.', 'inky-btg' ) . "\n",
+				esc_html__( 'Este código é válido até %s.', 'inky-pix-for-btg-pactual' ) . "\n",
 				esc_html( date_i18n( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), (int) $data['expires_at'] ) )
 			);
 		}

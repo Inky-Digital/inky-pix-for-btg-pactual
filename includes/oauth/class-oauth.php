@@ -77,7 +77,7 @@ class Inky_BTG_OAuth {
 		if ( empty( $credentials['client_id'] ) ) {
 			return new WP_Error(
 				'inky_btg_missing_client_id',
-				__( 'Informe o Client ID antes de conectar a conta.', 'inky-btg' )
+				__( 'Informe o Client ID antes de conectar a conta.', 'inky-pix-for-btg-pactual' )
 			);
 		}
 
@@ -153,7 +153,7 @@ class Inky_BTG_OAuth {
 		if ( '' === $state || empty( $states[ $state ]['environment'] ) ) {
 			return new WP_Error(
 				'inky_btg_invalid_state',
-				__( 'O link de autorização expirou ou já foi usado. Gere um novo link e tente novamente.', 'inky-btg' )
+				__( 'O link de autorização expirou ou já foi usado. Gere um novo link e tente novamente.', 'inky-pix-for-btg-pactual' )
 			);
 		}
 
@@ -184,7 +184,7 @@ class Inky_BTG_OAuth {
 		$code  = (string) $request->get_param( 'code' );
 
 		if ( '' === $code ) {
-			$this->redirect_back( 'error', __( 'O BTG não devolveu o código de autorização.', 'inky-btg' ) );
+			$this->redirect_back( 'error', __( 'O BTG não devolveu o código de autorização.', 'inky-pix-for-btg-pactual' ) );
 			return;
 		}
 
@@ -203,7 +203,7 @@ class Inky_BTG_OAuth {
 		}
 
 		delete_transient( 'inky_btg_share_link' );
-		$this->redirect_back( 'success', __( 'Conta conectada com sucesso.', 'inky-btg' ) );
+		$this->redirect_back( 'success', __( 'Conta conectada com sucesso.', 'inky-pix-for-btg-pactual' ) );
 	}
 
 	/**
@@ -222,18 +222,18 @@ class Inky_BTG_OAuth {
 
 		switch ( $error ) {
 			case 'access_denied':
-				return __( 'A autorização foi recusada pelo usuário.', 'inky-btg' );
+				return __( 'A autorização foi recusada pelo usuário.', 'inky-pix-for-btg-pactual' );
 
 			case 'invalid_client':
-				return __( 'O Client ID ou o Client Secret estão incorretos.', 'inky-btg' );
+				return __( 'O Client ID ou o Client Secret estão incorretos.', 'inky-pix-for-btg-pactual' );
 
 			case 'invalid_scope':
-				return __( 'Um dos escopos solicitados não está autorizado para este aplicativo.', 'inky-btg' );
+				return __( 'Um dos escopos solicitados não está autorizado para este aplicativo.', 'inky-pix-for-btg-pactual' );
 
 			default:
 				return sprintf(
 					/* translators: %s: código de erro do OAuth */
-					__( 'O BTG devolveu o erro %s durante a autorização.', 'inky-btg' ),
+					__( 'O BTG devolveu o erro %s durante a autorização.', 'inky-pix-for-btg-pactual' ),
 					$error
 				);
 		}
@@ -256,8 +256,8 @@ class Inky_BTG_OAuth {
 			nocache_headers();
 			wp_die(
 				'<p style="font-size:16px">' . esc_html( $message ) . '</p>'
-				. ( 'success' === $status ? '<p>' . esc_html__( 'Pode fechar esta janela.', 'inky-btg' ) . '</p>' : '' ),
-				esc_html__( 'PIX BTG Pactual', 'inky-btg' ),
+				. ( 'success' === $status ? '<p>' . esc_html__( 'Pode fechar esta janela.', 'inky-pix-for-btg-pactual' ) . '</p>' : '' ),
+				esc_html__( 'PIX BTG Pactual', 'inky-pix-for-btg-pactual' ),
 				array( 'response' => 200 )
 			);
 		}
@@ -323,7 +323,7 @@ class Inky_BTG_OAuth {
 		} elseif ( empty( $data['refresh_token'] ) ) {
 			$result = new WP_Error(
 				'inky_btg_missing_refresh_token',
-				__( 'Não há refresh token gravado. Conecte a conta novamente.', 'inky-btg' )
+				__( 'Não há refresh token gravado. Conecte a conta novamente.', 'inky-pix-for-btg-pactual' )
 			);
 		} else {
 			$body = array(
@@ -355,7 +355,7 @@ class Inky_BTG_OAuth {
 		if ( empty( $credentials['client_id'] ) || empty( $credentials['client_secret'] ) ) {
 			return new WP_Error(
 				'inky_btg_missing_credentials',
-				__( 'Client ID e Client Secret são obrigatórios para obter o token.', 'inky-btg' )
+				__( 'Client ID e Client Secret são obrigatórios para obter o token.', 'inky-pix-for-btg-pactual' )
 			);
 		}
 
@@ -379,7 +379,7 @@ class Inky_BTG_OAuth {
 			Inky_BTG_Logger::error(
 				sprintf(
 					/* translators: 1: contexto, 2: mensagem de erro */
-					__( 'Falha de rede ao %1$s: %2$s.', 'inky-btg' ),
+					__( 'Falha de rede ao %1$s: %2$s.', 'inky-pix-for-btg-pactual' ),
 					$context,
 					$response->get_error_message()
 				),
@@ -400,7 +400,7 @@ class Inky_BTG_OAuth {
 			Inky_BTG_Logger::error(
 				sprintf(
 					/* translators: 1: contexto, 2: código HTTP */
-					__( 'Erro ao %1$s: HTTP %2$d.', 'inky-btg' ),
+					__( 'Erro ao %1$s: HTTP %2$d.', 'inky-pix-for-btg-pactual' ),
 					$context,
 					$status
 				),
@@ -417,7 +417,7 @@ class Inky_BTG_OAuth {
 		if ( empty( $decoded['access_token'] ) ) {
 			return new WP_Error(
 				'inky_btg_token_missing',
-				__( 'O BTG respondeu sem o token de acesso.', 'inky-btg' )
+				__( 'O BTG respondeu sem o token de acesso.', 'inky-pix-for-btg-pactual' )
 			);
 		}
 
@@ -438,7 +438,7 @@ class Inky_BTG_OAuth {
 		Inky_BTG_Logger::info(
 			sprintf(
 				/* translators: %s: contexto */
-				__( 'Token obtido com sucesso ao %s.', 'inky-btg' ),
+				__( 'Token obtido com sucesso ao %s.', 'inky-pix-for-btg-pactual' ),
 				$context
 			),
 			array(
@@ -529,7 +529,7 @@ class Inky_BTG_OAuth {
 				Inky_BTG_Logger::warning(
 					sprintf(
 						/* translators: %s: ambiente */
-						__( 'O refresh token do ambiente %s expirou. É preciso reconectar a conta.', 'inky-btg' ),
+						__( 'O refresh token do ambiente %s expirou. É preciso reconectar a conta.', 'inky-pix-for-btg-pactual' ),
 						$environment
 					),
 					array( 'source' => 'oauth' )
@@ -564,7 +564,7 @@ class Inky_BTG_OAuth {
 			if ( ! Inky_BTG_Token_Store::can_refresh( $environment ) ) {
 				return new WP_Error(
 					'inky_btg_not_connected',
-					__( 'A conta do BTG Pactual não está conectada ou a autorização expirou. Reconecte em WooCommerce > BTG PIX.', 'inky-btg' )
+					__( 'A conta do BTG Pactual não está conectada ou a autorização expirou. Reconecte em WooCommerce > BTG PIX.', 'inky-pix-for-btg-pactual' )
 				);
 			}
 
@@ -580,7 +580,7 @@ class Inky_BTG_OAuth {
 		if ( empty( $data['access_token'] ) ) {
 			return new WP_Error(
 				'inky_btg_not_connected',
-				__( 'A conta do BTG Pactual não está conectada. Conecte em WooCommerce > BTG PIX.', 'inky-btg' )
+				__( 'A conta do BTG Pactual não está conectada. Conecte em WooCommerce > BTG PIX.', 'inky-pix-for-btg-pactual' )
 			);
 		}
 
@@ -602,7 +602,7 @@ class Inky_BTG_OAuth {
 		Inky_BTG_Logger::info(
 			sprintf(
 				/* translators: %s: ambiente */
-				__( 'Conta do ambiente %s desconectada.', 'inky-btg' ),
+				__( 'Conta do ambiente %s desconectada.', 'inky-pix-for-btg-pactual' ),
 				$environment
 			),
 			array( 'source' => 'oauth' )

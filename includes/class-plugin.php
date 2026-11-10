@@ -81,7 +81,7 @@ final class Inky_BTG_Plugin {
 			'init',
 			function () {
 				load_plugin_textdomain(
-					'inky-btg',
+					'inky-pix-for-btg-pactual',
 					false,
 					dirname( INKY_BTG_BASENAME ) . '/languages'
 				);
@@ -270,7 +270,7 @@ final class Inky_BTG_Plugin {
 			'inky_btg_settings' => sprintf(
 				'<a href="%s">%s</a>',
 				esc_url( $settings_url ),
-				esc_html__( 'Configurações', 'inky-btg' )
+				esc_html__( 'Configurações', 'inky-pix-for-btg-pactual' )
 			),
 		);
 

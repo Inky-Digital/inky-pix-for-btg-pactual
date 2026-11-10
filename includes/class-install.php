@@ -137,9 +137,9 @@ class Inky_BTG_Install {
 		$defaults = array(
 			'environment'          => 'sandbox',
 			'enabled'              => 'no',
-			'title'                => __( 'PIX', 'inky-btg' ),
-			'description'          => __( 'Pague com PIX usando o QR Code gerado na finalização do pedido.', 'inky-btg' ),
-			'instructions'         => __( 'Escaneie o QR Code ou copie o código PIX para concluir o pagamento.', 'inky-btg' ),
+			'title'                => __( 'PIX', 'inky-pix-for-btg-pactual' ),
+			'description'          => __( 'Pague com PIX usando o QR Code gerado na finalização do pedido.', 'inky-pix-for-btg-pactual' ),
+			'instructions'         => __( 'Escaneie o QR Code ou copie o código PIX para concluir o pagamento.', 'inky-pix-for-btg-pactual' ),
 			'expiration_minutes'   => 60,
 			'amount_unit'          => 'reais',
 			'polling_enabled'      => 'yes',
@@ -191,7 +191,7 @@ class Inky_BTG_Install {
 				12 * HOUR_IN_SECONDS,
 				self::HOOK_REFRESH_TOKEN,
 				array(),
-				'inky-btg'
+				'inky-pix-for-btg-pactual'
 			);
 		}
 
@@ -201,7 +201,7 @@ class Inky_BTG_Install {
 				MINUTE_IN_SECONDS,
 				self::HOOK_POLL_PAYMENTS,
 				array(),
-				'inky-btg'
+				'inky-pix-for-btg-pactual'
 			);
 		}
 
@@ -211,7 +211,7 @@ class Inky_BTG_Install {
 				DAY_IN_SECONDS,
 				self::HOOK_CLEANUP,
 				array(),
-				'inky-btg'
+				'inky-pix-for-btg-pactual'
 			);
 		}
 	}
@@ -232,7 +232,7 @@ class Inky_BTG_Install {
 
 		foreach ( $hooks as $hook ) {
 			if ( function_exists( 'as_unschedule_all_actions' ) ) {
-				as_unschedule_all_actions( $hook, array(), 'inky-btg' );
+				as_unschedule_all_actions( $hook, array(), 'inky-pix-for-btg-pactual' );
 			}
 
 			wp_unschedule_hook( $hook );
@@ -249,7 +249,7 @@ class Inky_BTG_Install {
 		if ( ! isset( $schedules['inky_btg_minute'] ) ) {
 			$schedules['inky_btg_minute'] = array(
 				'interval' => MINUTE_IN_SECONDS,
-				'display'  => __( 'A cada minuto (PIX BTG)', 'inky-btg' ),
+				'display'  => __( 'A cada minuto (PIX BTG)', 'inky-pix-for-btg-pactual' ),
 			);
 		}
 

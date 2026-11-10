@@ -37,7 +37,7 @@ final class Inky_BTG_Error_Translator {
 		if ( '' !== $correlation_id ) {
 			$message .= ' ' . sprintf(
 				/* translators: %s: identificador de correlação */
-				__( 'Código de correlação: %s.', 'inky-btg' ),
+				__( 'Código de correlação: %s.', 'inky-pix-for-btg-pactual' ),
 				$correlation_id
 			);
 		}
@@ -55,39 +55,39 @@ final class Inky_BTG_Error_Translator {
 	private static function get_message( $status, $body ) {
 		switch ( $status ) {
 			case 400:
-				return __( 'A requisição foi recusada por dados inválidos. Revise os dados do pedido e tente novamente.', 'inky-btg' );
+				return __( 'A requisição foi recusada por dados inválidos. Revise os dados do pedido e tente novamente.', 'inky-pix-for-btg-pactual' );
 
 			case 401:
-				return __( 'A autenticação falhou. Reconecte a conta do BTG Pactual em WooCommerce > BTG PIX.', 'inky-btg' );
+				return __( 'A autenticação falhou. Reconecte a conta do BTG Pactual em WooCommerce > BTG PIX.', 'inky-pix-for-btg-pactual' );
 
 			case 403:
-				return __( 'A conta conectada não tem permissão para esta operação. Em produção, quem clica em Conectar precisa ter perfil Operador ou superior na conta PJ (perfil só de desenvolvedor é recusado). Reconecte com esse usuário.', 'inky-btg' );
+				return __( 'A conta conectada não tem permissão para esta operação. Em produção, quem clica em Conectar precisa ter perfil Operador ou superior na conta PJ (perfil só de desenvolvedor é recusado). Reconecte com esse usuário.', 'inky-pix-for-btg-pactual' );
 
 			case 404:
-				return __( 'O recurso solicitado não existe na API. Verifique se o ambiente selecionado corresponde às credenciais usadas.', 'inky-btg' );
+				return __( 'O recurso solicitado não existe na API. Verifique se o ambiente selecionado corresponde às credenciais usadas.', 'inky-pix-for-btg-pactual' );
 
 			case 409:
-				return __( 'A requisição entrou em conflito com uma anterior. Isso costuma indicar reenvio da mesma cobrança.', 'inky-btg' );
+				return __( 'A requisição entrou em conflito com uma anterior. Isso costuma indicar reenvio da mesma cobrança.', 'inky-pix-for-btg-pactual' );
 
 			case 429:
-				return __( 'Muitas requisições em pouco tempo. O plugin já tentou novamente; aguarde alguns instantes.', 'inky-btg' );
+				return __( 'Muitas requisições em pouco tempo. O plugin já tentou novamente; aguarde alguns instantes.', 'inky-pix-for-btg-pactual' );
 
 			case 500:
 			case 502:
 			case 503:
 			case 504:
-				return __( 'O BTG Pactual está com instabilidade no momento. O pagamento continua pendente e será verificado automaticamente.', 'inky-btg' );
+				return __( 'O BTG Pactual está com instabilidade no momento. O pagamento continua pendente e será verificado automaticamente.', 'inky-pix-for-btg-pactual' );
 
 			default:
 				if ( $status >= 500 ) {
-					return __( 'Erro no servidor do BTG Pactual. O pagamento continua pendente e será verificado automaticamente.', 'inky-btg' );
+					return __( 'Erro no servidor do BTG Pactual. O pagamento continua pendente e será verificado automaticamente.', 'inky-pix-for-btg-pactual' );
 				}
 
 				if ( $status >= 400 ) {
-					return __( 'A API recusou a requisição. Consulte o log de diagnóstico para mais detalhes.', 'inky-btg' );
+					return __( 'A API recusou a requisição. Consulte o log de diagnóstico para mais detalhes.', 'inky-pix-for-btg-pactual' );
 				}
 
-				return __( 'Não foi possível concluir a operação com o BTG Pactual.', 'inky-btg' );
+				return __( 'Não foi possível concluir a operação com o BTG Pactual.', 'inky-pix-for-btg-pactual' );
 		}
 	}
 

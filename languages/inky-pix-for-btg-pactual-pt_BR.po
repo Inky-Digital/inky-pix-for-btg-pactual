@@ -2,386 +2,292 @@
 # This file is distributed under the same license as the inky-btg plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: inky-btg 1.0.0\n"
+"Project-Id-Version: inky-pix-for-btg-pactual 1.0.0\n"
 "Report-Msgid-Bugs-To: https://example.com/support\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: Inky <suporte@example.com>\n"
+"Language-Team: Português do Brasil\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-01-01T00:00:00+00:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2026-01-01T00:00:00+00:00\n"
 "X-Generator: WP-CLI 2.10.0\n"
-"X-Domain: inky-btg\n"
+"X-Domain: inky-pix-for-btg-pactual\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#. Plugin Name of the plugin
 msgid "PIX BTG Pactual para WooCommerce"
-msgstr ""
+msgstr "PIX BTG Pactual para WooCommerce"
 
-#. Description of the plugin
 msgid "Receba pagamentos por PIX usando a API Pix Cobrança do BTG Pactual Empresas."
-msgstr ""
+msgstr "Receba pagamentos por PIX usando a API Pix Cobrança do BTG Pactual Empresas."
 
-#: includes/admin/class-admin.php
 msgid "PIX BTG Pactual"
-msgstr ""
+msgstr "PIX BTG Pactual"
 
-#: includes/admin/class-admin.php
 msgid "Testando conexão…"
-msgstr ""
+msgstr "Testando conexão…"
 
-#: includes/admin/class-admin.php
 msgid "Log copiado."
-msgstr ""
+msgstr "Log copiado."
 
-#: includes/admin/class-admin.php
 msgid "Não foi possível copiar o log."
-msgstr ""
+msgstr "Não foi possível copiar o log."
 
-#: includes/admin/class-admin.php
 msgid "Consultando o BTG…"
-msgstr ""
+msgstr "Consultando o BTG…"
 
-#: includes/admin/class-admin.php
 msgid "Não foi possível consultar o pagamento."
-msgstr ""
+msgstr "Não foi possível consultar o pagamento."
 
-#: includes/admin/class-admin.php
 msgid "Informe o número do pedido."
-msgstr ""
+msgstr "Informe o número do pedido."
 
-#: includes/admin/class-admin.php
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
-#: includes/admin/class-admin.php
 msgid "Falhou"
-msgstr ""
+msgstr "Falhou"
 
-#: includes/admin/class-admin.php
 msgid "Ignorado"
-msgstr ""
+msgstr "Ignorado"
 
-#: includes/admin/class-admin.php
 msgid "Verificando…"
-msgstr ""
+msgstr "Verificando…"
 
-#: includes/admin/class-admin.php
 msgid "Checklist concluído."
-msgstr ""
+msgstr "Checklist concluído."
 
-#: includes/admin/class-admin.php
 msgid "O checklist parou na etapa que falhou."
-msgstr ""
+msgstr "O checklist parou na etapa que falhou."
 
-#: includes/admin/class-admin.php
 msgid "Ambiente"
-msgstr ""
+msgstr "Ambiente"
 
-#: includes/admin/class-admin.php
 msgid "Sandbox e produção usam credenciais e tokens separados. Trocar o ambiente não apaga os dados do outro."
-msgstr ""
+msgstr "Sandbox e produção usam credenciais e tokens separados. Trocar o ambiente não apaga os dados do outro."
 
-#: includes/admin/class-admin.php
 msgid "Ambiente ativo"
-msgstr ""
+msgstr "Ambiente ativo"
 
-#: includes/admin/class-admin.php
 msgid "Sandbox (testes)"
-msgstr ""
+msgstr "Sandbox (testes)"
 
-#: includes/admin/class-admin.php
 msgid "Produção"
-msgstr ""
+msgstr "Produção"
 
-#: includes/admin/class-admin.php
 msgid "Atenção: o sandbox não entrega webhooks. Nesse ambiente o plugin depende do polling para confirmar pagamentos."
-msgstr ""
+msgstr "Atenção: o sandbox não entrega webhooks. Nesse ambiente o plugin depende do polling para confirmar pagamentos."
 
-#: includes/admin/class-admin.php
 msgid "Credenciais do aplicativo"
-msgstr ""
+msgstr "Credenciais do aplicativo"
 
-#: includes/admin/class-admin.php
 msgid "Informe o client_id e o client_secret do aplicativo criado na Área do Desenvolvedor do BTG. Os valores são cifrados antes de serem gravados."
-msgstr ""
+msgstr "Informe o client_id e o client_secret do aplicativo criado na Área do Desenvolvedor do BTG. Os valores são cifrados antes de serem gravados."
 
-#: includes/admin/class-admin.php
 msgid "Client ID"
-msgstr ""
+msgstr "Client ID"
 
-#: includes/admin/class-admin.php
 msgid "Client Secret"
-msgstr ""
+msgstr "Client Secret"
 
-#: includes/admin/class-admin.php
 msgid "Deixe em branco para manter o valor atual."
-msgstr ""
+msgstr "Deixe em branco para manter o valor atual."
 
-#: includes/admin/class-admin.php
 msgid "URL de redirecionamento"
-msgstr ""
+msgstr "URL de redirecionamento"
 
-#: includes/admin/class-admin.php
 msgid "Cadastre exatamente esta URL no aplicativo do BTG. Ela não é configurável."
-msgstr ""
+msgstr "Cadastre exatamente esta URL no aplicativo do BTG. Ela não é configurável."
 
-#: includes/admin/class-admin.php
 msgid "Salvar credenciais"
-msgstr ""
+msgstr "Salvar credenciais"
 
-#: includes/admin/class-admin.php
 msgid "Autorização"
-msgstr ""
+msgstr "Autorização"
 
-#: includes/admin/class-admin.php
 msgid "O BTG usa o fluxo Authorization Code. É preciso autorizar uma vez por ambiente, entrando com um usuário operador ou superior."
-msgstr ""
+msgstr "O BTG usa o fluxo Authorization Code. É preciso autorizar uma vez por ambiente, entrando com um usuário operador ou superior."
 
-#: includes/admin/class-admin.php
 msgid "Testar conexão"
-msgstr ""
+msgstr "Testar conexão"
 
-#: includes/admin/class-admin.php
 msgid "Checklist da conexão"
-msgstr ""
+msgstr "Checklist da conexão"
 
-#: includes/admin/class-admin.php
 msgid "Salve o client_id e o client_secret para habilitar o teste de conexão."
-msgstr ""
+msgstr "Salve o client_id e o client_secret para habilitar o teste de conexão."
 
-#: includes/admin/class-admin.php
 msgid "Verificar pagamento agora"
-msgstr ""
+msgstr "Verificar pagamento agora"
 
-#: includes/admin/class-admin.php
 msgid "Consulta o BTG na hora, sem esperar o próximo ciclo do polling. Use quando o cliente avisar que pagou e o pedido ainda estiver pendente."
-msgstr ""
+msgstr "Consulta o BTG na hora, sem esperar o próximo ciclo do polling. Use quando o cliente avisar que pagou e o pedido ainda estiver pendente."
 
-#: includes/admin/class-admin.php
 msgid "Número do pedido"
-msgstr ""
+msgstr "Número do pedido"
 
-#: includes/admin/class-admin.php
 msgid "Últimos registros"
-msgstr ""
+msgstr "Últimos registros"
 
-#: includes/admin/class-admin.php
 msgid "Copiar log"
-msgstr ""
+msgstr "Copiar log"
 
-#: includes/admin/class-admin.php
 msgid "Log detalhado"
-msgstr ""
+msgstr "Log detalhado"
 
-#: includes/admin/class-admin.php
 msgid "Registrar chamadas e respostas da API"
-msgstr ""
+msgstr "Registrar chamadas e respostas da API"
 
-#: includes/admin/class-admin.php
 msgid "Tokens, segredos e chaves PIX são sempre mascarados, mesmo com o log detalhado ligado."
-msgstr ""
+msgstr "Tokens, segredos e chaves PIX são sempre mascarados, mesmo com o log detalhado ligado."
 
-#: includes/admin/class-admin.php
 msgid "Remover dados ao desinstalar"
-msgstr ""
+msgstr "Remover dados ao desinstalar"
 
-#: includes/admin/class-admin.php
 msgid "Apagar configurações, credenciais e logs ao desinstalar o plugin"
-msgstr ""
+msgstr "Apagar configurações, credenciais e logs ao desinstalar o plugin"
 
-#: includes/admin/class-admin.php
 msgid "Salvar diagnóstico"
-msgstr ""
+msgstr "Salvar diagnóstico"
 
-#: includes/admin/class-admin.php
 msgid "Itens aguardando confirmação"
-msgstr ""
+msgstr "Itens aguardando confirmação"
 
-#: includes/admin/class-admin.php
 msgid "Estes pontos não estão descritos na documentação pública do BTG. O plugin não inventou nenhum valor: onde não há confirmação, ele adota o comportamento mais seguro e avisa aqui."
-msgstr ""
+msgstr "Estes pontos não estão descritos na documentação pública do BTG. O plugin não inventou nenhum valor: onde não há confirmação, ele adota o comportamento mais seguro e avisa aqui."
 
-#: includes/admin/class-admin.php
 msgid "Item"
-msgstr ""
+msgstr "Item"
 
-#: includes/admin/class-admin.php
 msgid "Situação"
-msgstr ""
+msgstr "Situação"
 
-#: includes/admin/class-admin.php
 msgid "O que fazer"
-msgstr ""
+msgstr "O que fazer"
 
-#: includes/admin/class-admin.php
 msgid "Confirmado"
-msgstr ""
+msgstr "Confirmado"
 
-#: includes/admin/class-admin.php
 msgid "Presumido"
-msgstr ""
+msgstr "Presumido"
 
-#: includes/admin/class-admin.php
 msgid "Você não tem permissão para consultar pedidos."
-msgstr ""
+msgstr "Você não tem permissão para consultar pedidos."
 
-#: includes/admin/class-admin.php
 msgid "Pedido não encontrado."
-msgstr ""
+msgstr "Pedido não encontrado."
 
-#: includes/admin/class-admin.php
 msgid "Pagamento confirmado. O pedido foi marcado como pago."
-msgstr ""
+msgstr "Pagamento confirmado. O pedido foi marcado como pago."
 
-#: includes/admin/class-admin.php
 msgid "O BTG ainda não registrou o pagamento desta cobrança."
-msgstr ""
+msgstr "O BTG ainda não registrou o pagamento desta cobrança."
 
-#: includes/admin/class-admin.php
 msgid "Você não tem permissão para testar a conexão."
-msgstr ""
+msgstr "Você não tem permissão para testar a conexão."
 
-#: includes/admin/class-admin.php
-msgid "Credenciais do aplicativo"
-msgstr ""
-
-#: includes/admin/class-admin.php
 msgid "client_id e client_secret encontrados."
-msgstr ""
+msgstr "client_id e client_secret encontrados."
 
-#: includes/admin/class-admin.php
 msgid "Salve o client_id e o client_secret na aba Conexão."
-msgstr ""
+msgstr "Salve o client_id e o client_secret na aba Conexão."
 
-#: includes/admin/class-admin.php
 msgid "O checklist parou na primeira etapa."
-msgstr ""
+msgstr "O checklist parou na primeira etapa."
 
-#: includes/admin/class-admin.php
 msgid "Autorização OAuth"
-msgstr ""
+msgstr "Autorização OAuth"
 
-#: includes/admin/class-admin.php
 msgid "Token de acesso presente para este ambiente."
-msgstr ""
+msgstr "Token de acesso presente para este ambiente."
 
-#: includes/admin/class-admin.php
 msgid "Clique em Conectar e autorize o aplicativo no BTG."
-msgstr ""
+msgstr "Clique em Conectar e autorize o aplicativo no BTG."
 
-#: includes/admin/class-admin.php
 msgid "O checklist parou na etapa de autorização."
-msgstr ""
+msgstr "O checklist parou na etapa de autorização."
 
-#: includes/admin/class-admin.php
 msgid "Validade do token"
-msgstr ""
+msgstr "Validade do token"
 
-#: includes/admin/class-admin.php
 msgid "O token expirou. A renovação automática deve assumir na próxima chamada."
-msgstr ""
+msgstr "O token expirou. A renovação automática deve assumir na próxima chamada."
 
-#: includes/admin/class-admin.php
 msgid "Token dentro da validade."
-msgstr ""
+msgstr "Token dentro da validade."
 
-#: includes/admin/class-admin.php
 msgid "Identificador da empresa"
-msgstr ""
+msgstr "Identificador da empresa"
 
-#: includes/admin/class-admin.php
 msgid "companyId lido da claim pix-cash-in do token."
-msgstr ""
+msgstr "companyId lido da claim pix-cash-in do token."
 
-#: includes/admin/class-admin.php
 msgid "A claim pix-cash-in não trouxe o companyId. Verifique se o aplicativo tem o escopo de PIX habilitado."
-msgstr ""
+msgstr "A claim pix-cash-in não trouxe o companyId. Verifique se o aplicativo tem o escopo de PIX habilitado."
 
-#: includes/admin/class-admin.php
 msgid "O checklist parou na leitura do companyId."
-msgstr ""
+msgstr "O checklist parou na leitura do companyId."
 
-#: includes/admin/class-admin.php
 msgid "Chamada autenticada à API"
-msgstr ""
+msgstr "Chamada autenticada à API"
 
-#: includes/admin/class-admin.php
 msgid "O checklist parou na chamada à API."
-msgstr ""
+msgstr "O checklist parou na chamada à API."
 
-#: includes/admin/class-admin.php
 msgid "A API respondeu à listagem de locations."
-msgstr ""
+msgstr "A API respondeu à listagem de locations."
 
-#: includes/admin/class-admin.php
 msgid "Webhook"
-msgstr ""
+msgstr "Webhook"
 
-#: includes/admin/class-admin.php
 msgid "Segredo salvo. Lembre que o sandbox não entrega webhooks: o polling confirma os pagamentos."
-msgstr ""
+msgstr "Segredo salvo. Lembre que o sandbox não entrega webhooks: o polling confirma os pagamentos."
 
-#: includes/admin/class-admin.php
 msgid "O sandbox não entrega webhooks. O polling cobre a confirmação."
-msgstr ""
+msgstr "O sandbox não entrega webhooks. O polling cobre a confirmação."
 
-#: includes/admin/class-admin.php
 msgid "Segredo do webhook configurado."
-msgstr ""
+msgstr "Segredo do webhook configurado."
 
-#: includes/admin/class-admin.php
 msgid "Cadastre o segredo do webhook na aba Webhook para validar as notificações."
-msgstr ""
+msgstr "Cadastre o segredo do webhook na aba Webhook para validar as notificações."
 
-#: includes/admin/class-admin.php
 msgid "Todas as etapas foram concluídas."
-msgstr ""
+msgstr "Todas as etapas foram concluídas."
 
-#: includes/admin/class-admin.php
 msgid "Nenhum registro encontrado."
-msgstr ""
+msgstr "Nenhum registro encontrado."
 
-#: includes/admin/class-admin.php
 msgid "Você não tem permissão para salvar estas configurações."
-msgstr ""
+msgstr "Você não tem permissão para salvar estas configurações."
 
-#: includes/gateway/class-gateway.php
 msgid "Receba pagamentos por PIX usando a API Pix Cobrança do BTG Pactual Empresas. O cliente paga lendo o QR Code ou usando o copia e cola."
-msgstr ""
+msgstr "Receba pagamentos por PIX usando a API Pix Cobrança do BTG Pactual Empresas. O cliente paga lendo o QR Code ou usando o copia e cola."
 
-#: includes/gateway/class-gateway.php
 msgid "PIX"
-msgstr ""
+msgstr "PIX"
 
-#: includes/gateway/class-gateway.php
 msgid "Ativar"
-msgstr ""
+msgstr "Ativar"
 
-#: includes/gateway/class-gateway.php
 msgid "Ativar o pagamento por PIX"
-msgstr ""
+msgstr "Ativar o pagamento por PIX"
 
-#: includes/gateway/class-gateway.php
 msgid "Título no checkout"
-msgstr ""
+msgstr "Título no checkout"
 
-#: includes/gateway/class-gateway.php
 msgid "Como o meio de pagamento aparece para o cliente no checkout."
-msgstr ""
+msgstr "Como o meio de pagamento aparece para o cliente no checkout."
 
-#: includes/gateway/class-gateway.php
 msgid "Descrição no checkout"
-msgstr ""
+msgstr "Descrição no checkout"
 
-#: includes/gateway/class-gateway.php
 msgid "Texto exibido abaixo do título, explicando como o cliente deve pagar."
-msgstr ""
+msgstr "Texto exibido abaixo do título, explicando como o cliente deve pagar."
 
-#: includes/gateway/class-gateway.php
 msgid "Ao finalizar o pedido, mostramos o QR Code e o código copia e cola. O pedido é confirmado automaticamente após o pagamento."
-msgstr ""
+msgstr "Ao finalizar o pedido, mostramos o QR Code e o código copia e cola. O pedido é confirmado automaticamente após o pagamento."
 
-#: inky-btg.php
 msgid "O plugin PIX BTG Pactual para WooCommerce precisa do WooCommerce instalado e ativo para funcionar."
-msgstr ""
+msgstr "O plugin PIX BTG Pactual para WooCommerce precisa do WooCommerce instalado e ativo para funcionar."

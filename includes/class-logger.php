@@ -19,7 +19,7 @@ class Inky_BTG_Logger {
 	/**
 	 * Identificador do canal usado no WC_Logger.
 	 */
-	const CHANNEL = 'inky-btg';
+	const CHANNEL = 'inky-pix-for-btg-pactual';
 
 	/**
 	 * Níveis de log aceitos, em ordem crescente de severidade.

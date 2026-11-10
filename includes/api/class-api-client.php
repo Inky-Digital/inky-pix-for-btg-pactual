@@ -196,7 +196,7 @@ class Inky_BTG_API_Client {
 				Inky_BTG_Logger::warning(
 					sprintf(
 						/* translators: 1: contexto, 2: mensagem de erro, 3: tentativa */
-						__( 'Falha de rede em %1$s: %2$s (tentativa %3$d).', 'inky-btg' ),
+						__( 'Falha de rede em %1$s: %2$s (tentativa %3$d).', 'inky-pix-for-btg-pactual' ),
 						$context ? $context : $url,
 						$response->get_error_message(),
 						$attempt
@@ -218,7 +218,7 @@ class Inky_BTG_API_Client {
 				Inky_BTG_Logger::warning(
 					sprintf(
 						/* translators: 1: contexto, 2: segundos, 3: tentativa */
-						__( 'Limite de requisições atingido em %1$s. Aguardando %2$d segundos (tentativa %3$d).', 'inky-btg' ),
+						__( 'Limite de requisições atingido em %1$s. Aguardando %2$d segundos (tentativa %3$d).', 'inky-pix-for-btg-pactual' ),
 						$context ? $context : $url,
 						$delay,
 						$attempt
@@ -239,7 +239,7 @@ class Inky_BTG_API_Client {
 
 		return new WP_Error(
 			'inky_btg_request_failed',
-			__( 'Não foi possível concluir a requisição após várias tentativas.', 'inky-btg' )
+			__( 'Não foi possível concluir a requisição após várias tentativas.', 'inky-pix-for-btg-pactual' )
 		);
 	}
 
@@ -305,10 +305,10 @@ class Inky_BTG_API_Client {
 		Inky_BTG_Logger::error(
 			sprintf(
 				/* translators: 1: contexto, 2: código HTTP, 3: identificador de correlação */
-				__( 'Erro na chamada %1$s: HTTP %2$d. Correlação: %3$s.', 'inky-btg' ),
+				__( 'Erro na chamada %1$s: HTTP %2$d. Correlação: %3$s.', 'inky-pix-for-btg-pactual' ),
 				$context ? $context : 'API',
 				$status,
-				'' !== $correlation_id ? $correlation_id : __( 'não informada', 'inky-btg' )
+				'' !== $correlation_id ? $correlation_id : __( 'não informada', 'inky-pix-for-btg-pactual' )
 			),
 			array(
 				'source'         => 'api-client',

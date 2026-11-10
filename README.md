@@ -1,5 +1,5 @@
 <p align="center">
-  <img src=".github/assets/capa.svg" alt="Inky BTG: Pix pelo BTG Pactual Empresas no WooCommerce" width="100%">
+  <img src=".github/assets/capa.svg" alt="Inky Pix for BTG Pactual: Pix pelo BTG Pactual Empresas no WooCommerce" width="100%">
 </p>
 
 <p align="center">
@@ -10,7 +10,7 @@
   <img alt="Status beta" src="https://img.shields.io/badge/status-beta-e8a33d">
 </p>
 
-# Inky BTG: gateway Pix do BTG Pactual Empresas para WooCommerce
+# Inky Pix for BTG Pactual: gateway Pix do BTG Pactual Empresas para WooCommerce
 
 Receba **Pix pelo BTG Pactual Empresas** na sua loja WooCommerce. O cliente vê o QR Code e o código copia e cola no checkout, paga pelo app do banco, e o pedido muda para pago sozinho quando o pagamento cai.
 
@@ -71,7 +71,7 @@ Encontrou um comportamento diferente na sua conta? Abra uma [issue](../../issues
 
 ## Precisa integrar outra coisa?
 
-O Inky BTG foi feito pela **[Inky Digital](https://inkydigital.com.br)**, que desenvolve sistemas sob medida e integra lojas, ERPs, CRMs e meios de pagamento para operações que não podem parar.
+O Inky Pix for BTG Pactual foi feito pela **[Inky Digital](https://inkydigital.com.br)**, que desenvolve sistemas sob medida e integra lojas, ERPs, CRMs e meios de pagamento para operações que não podem parar.
 
 Se a sua loja, o seu ERP e o seu banco ainda não conversam, [fale com a Inky](https://inkydigital.com.br/contato).
 
