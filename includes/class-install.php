@@ -283,7 +283,7 @@ class Inky_BTG_Install {
 		global $wpdb;
 		$logs = self::get_logs_table_name();
 		$events = self::get_events_table_name();
-		$wpdb->query( $wpdb->prepare( "DELETE FROM {$logs} WHERE created_at < %s", gmdate( 'Y-m-d H:i:s', time() - 30 * DAY_IN_SECONDS ) ) );
-		$wpdb->query( $wpdb->prepare( "DELETE FROM {$events} WHERE received_at < %s", gmdate( 'Y-m-d H:i:s', time() - 90 * DAY_IN_SECONDS ) ) );
+		$wpdb->query( $wpdb->prepare( 'DELETE FROM %i WHERE created_at < %s', $logs, gmdate( 'Y-m-d H:i:s', time() - 30 * DAY_IN_SECONDS ) ) );
+		$wpdb->query( $wpdb->prepare( 'DELETE FROM %i WHERE received_at < %s', $events, gmdate( 'Y-m-d H:i:s', time() - 90 * DAY_IN_SECONDS ) ) );
 	}
 }

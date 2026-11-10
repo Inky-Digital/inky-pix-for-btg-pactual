@@ -225,7 +225,7 @@ class Inky_BTG_Webhook {
 		);
 
 		if ( false === $inserted ) {
-			$existing = $wpdb->get_var( $wpdb->prepare( "SELECT id FROM {$table} WHERE correlation_id = %s", $correlation_id ) );
+			$existing = $wpdb->get_var( $wpdb->prepare( 'SELECT id FROM %i WHERE correlation_id = %s', $table, $correlation_id ) );
 			return $existing ? false : new WP_Error( 'inky_btg_webhook_storage_failed' );
 		}
 

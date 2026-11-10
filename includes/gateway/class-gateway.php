@@ -198,6 +198,7 @@ class Inky_BTG_Gateway extends WC_Payment_Gateway {
 		}
 		$charge = $service->create_for_order( $order );
 		if ( is_wp_error( $charge ) ) {
+			/* translators: %s: error message returned by the BTG API. */
 			$order->add_order_note( sprintf( __( 'Falha ao criar Pix BTG: %s', 'inky-btg' ), $charge->get_error_message() ) );
 			wc_add_notice( esc_html( $charge->get_error_message() ), 'error' );
 			return array( 'result' => 'failure' );

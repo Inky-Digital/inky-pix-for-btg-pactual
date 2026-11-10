@@ -2,10 +2,9 @@
 /**
  * Plugin Name:       Inky BTG
  * Plugin URI:        https://github.com/Inky-Digital/inky-btg
- * Description:       Pix para o BTG Pactual Empresas no WooCommerce: QR Code, copia e cola, webhook e confirmação automática do pedido. Plugin não oficial, sem vínculo com o BTG Pactual.
+ * Description:       Pix payments through BTG Pactual Empresas for WooCommerce: QR Code, copy and paste code, webhook and automatic order confirmation. Unofficial plugin, not affiliated with BTG Pactual.
  * Version:           0.2.2
  * Requires at least: 6.2
- * Tested up to:      7.1
  * Requires PHP:      8.1
  * Author:            Inky Digital
  * Author URI:        https://inkydigital.com.br

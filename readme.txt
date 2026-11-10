@@ -1,6 +1,6 @@
 === Inky BTG ===
 Contributors: inkydigital
-Tags: pix, btg, btg pactual, woocommerce, gateway de pagamento
+Tags: pix, btg, btg pactual, woocommerce, payment gateway
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 8.1
@@ -9,71 +9,75 @@ Stable tag: 0.2.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Receba Pix pelo BTG Pactual Empresas no WooCommerce: QR Code, copia e cola e pedido confirmado sozinho quando o pagamento cai.
+Accept Pix through BTG Pactual Empresas in WooCommerce: QR Code, copy and paste code, and orders confirmed automatically when the payment arrives.
 
 == Description ==
 
-O Inky BTG é um gateway de pagamento Pix para lojas WooCommerce que recebem pela conta do **BTG Pactual Empresas**, usando a API de Pix Cobrança do banco.
+Inky BTG is a Pix payment gateway for WooCommerce stores that receive payments in a **BTG Pactual Empresas** business account, using the bank's Pix Collection (Pix Cobrança) API.
 
-O cliente finaliza a compra, vê o QR Code e o código copia e cola na própria loja, paga pelo app do banco, e o pedido muda para pago sem ninguém conferir o extrato.
+The customer places the order, sees the QR Code and the copy and paste code on the store itself, pays in their banking app, and the order is marked as paid without anyone checking the bank statement.
 
-**O que o plugin faz**
+The plugin interface is in Brazilian Portuguese, since Pix is the Brazilian instant payment system.
 
-* Cria a cobrança Pix no BTG Pactual Empresas no fechamento do pedido.
-* Mostra QR Code e código copia e cola no checkout clássico e no checkout por blocos.
-* Confirma o pagamento pelo webhook do BTG e, como reserva, por consulta periódica de status.
-* Conecta a conta pelo OAuth do BTG (Authorization Code), com renovação automática do token.
-* Envia à pessoa da empresa um link para autorizar a conta no BTG sem precisar de acesso ao WordPress.
-* Guarda Client ID, Client Secret e tokens cifrados no banco, com os salts da instalação.
-* Separa sandbox e produção, com credenciais e tokens independentes.
-* Não repete automaticamente a criação de cobrança, para evitar Pix em dobro quando a resposta do banco é incerta.
+**What the plugin does**
 
-**Importante**
+* Creates the Pix charge in BTG Pactual Empresas when the order is placed.
+* Shows the QR Code and the copy and paste code in both the classic checkout and the block checkout.
+* Confirms the payment through the BTG webhook and, as a fallback, through periodic status checks.
+* Connects the account through BTG OAuth (Authorization Code), with automatic token renewal.
+* Generates a link so a person at the company can authorize the BTG account without access to WordPress.
+* Stores Client ID, Client Secret and tokens encrypted in the database, using the site's salts.
+* Keeps sandbox and production separate, with independent credentials and tokens.
+* Never retries charge creation automatically, to avoid duplicate Pix charges when the bank's response is uncertain.
 
-Este plugin não é oficial e não tem vínculo com o BTG Pactual. BTG Pactual é marca do seu titular. Desenvolvido e mantido pela [Inky Digital](https://inkydigital.com.br), que faz integrações sob medida entre lojas, ERPs e meios de pagamento.
+**Important**
+
+This is an unofficial plugin, not affiliated with or endorsed by BTG Pactual. BTG Pactual is a trademark of its owner. Developed and maintained by [Inky Digital](https://inkydigital.com.br), which builds custom integrations between stores, ERPs and payment providers.
+
+Source code and issues: [github.com/Inky-Digital/inky-btg](https://github.com/Inky-Digital/inky-btg).
 
 == Installation ==
 
-1. Instale e ative o plugin. O WooCommerce precisa estar ativo.
-2. Abra **WooCommerce > PIX BTG Pactual > Conexão**. O ambiente inicial é o sandbox.
-3. Copie a URL de redirecionamento mostrada pelo plugin e cadastre-a no aplicativo do BTG.
-4. Informe Client ID, Client Secret e a chave Pix da conta recebedora.
-5. Clique em **Conectar** e autorize a conta no BTG.
-6. Em produção, cadastre no BTG a URL da aba **Webhook**, com os eventos `instant-collection.paid` e `instant-collection.unlinked`, e salve o segredo do webhook no plugin.
+1. Install and activate the plugin. WooCommerce must be active.
+2. Open **WooCommerce > PIX BTG Pactual > Conexão**. The initial environment is sandbox.
+3. Copy the redirect URL shown by the plugin and register it in your BTG application.
+4. Enter the Client ID, the Client Secret and the Pix key of the receiving account.
+5. Click **Conectar** and authorize the account at BTG.
+6. In production, register the URL from the **Webhook** tab at BTG, with the events `instant-collection.paid` and `instant-collection.unlinked`, and save the webhook secret in the plugin.
 
-Enquanto faltar chave Pix, credencial ou autorização, o Pix não aparece no checkout.
+Pix is not offered at checkout while the Pix key, the credentials or the authorization are missing.
 
 == Frequently Asked Questions ==
 
-= Preciso de uma conta no BTG Pactual Empresas? =
+= Do I need a BTG Pactual Empresas account? =
 
-Sim. O plugin usa a API de Pix Cobrança do BTG Pactual Empresas, com um aplicativo criado no portal de desenvolvedores do banco e o escopo de Pix Cash-in.
+Yes. The plugin uses the BTG Pactual Empresas Pix Collection API, with an application created in the bank's developer portal and the Pix Cash-in scope.
 
-= O token expira. Preciso reconectar sempre? =
+= The token expires. Do I have to reconnect all the time? =
 
-Não. O plugin renova o token sozinho. Só é preciso autorizar de novo se a autorização for revogada no BTG.
+No. The plugin renews the token automatically. You only need to authorize again if the authorization is revoked at BTG.
 
-= O pedido é confirmado mesmo se o webhook falhar? =
+= Is the order confirmed even if the webhook fails? =
 
-Sim. Além do webhook, o plugin consulta periodicamente as cobranças em aberto e permite verificar um pedido na hora pelo botão "Verificar pagamento agora".
+Yes. Besides the webhook, the plugin periodically checks open charges and lets you check an order immediately with the "Verificar pagamento agora" button.
 
-= Funciona com o checkout por blocos? =
+= Does it work with the block checkout? =
 
-Sim, com o checkout clássico e com o de blocos do WooCommerce.
+Yes, with both the classic checkout and the WooCommerce block checkout.
 
-= O plugin é oficial do BTG Pactual? =
+= Is this an official BTG Pactual plugin? =
 
-Não. É um plugin independente, sem vínculo com o banco.
+No. It is an independent plugin, not affiliated with the bank.
 
 == External services ==
 
-Este plugin se conecta à API do BTG Pactual Empresas para autorizar a conta (OAuth), criar e consultar cobranças Pix e receber notificações de pagamento.
+This plugin connects to the BTG Pactual Empresas API to authorize the account (OAuth), create and query Pix charges, and receive payment notifications.
 
-* O que é enviado: o valor e o identificador do pedido, a chave Pix da loja, o texto da cobrança e as credenciais do aplicativo BTG configuradas pelo lojista.
-* Quando: ao conectar a conta, ao finalizar um pedido com Pix, nas consultas de status e na renovação do token.
-* Serviço: BTG Pactual Empresas. Termos e privacidade: https://www.btgpactual.com/politica-de-privacidade
+* What is sent: the order amount and identifier, the store's Pix key, the charge description, and the BTG application credentials configured by the store owner.
+* When: when connecting the account, when an order is placed with Pix, during status checks and during token renewal.
+* Service: BTG Pactual Empresas. Privacy policy: https://www.btgpactual.com/politica-de-privacidade
 
 == Changelog ==
 
 = 0.2.2 =
-* Versão inicial pública: Pix Cobrança, OAuth com renovação de token, webhook, consulta periódica e checkout clássico e por blocos.
+* First public release: Pix Collection, OAuth with token renewal, webhook, periodic status checks, classic and block checkout.

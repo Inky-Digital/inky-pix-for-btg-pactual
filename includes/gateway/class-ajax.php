@@ -150,6 +150,7 @@ class Inky_BTG_Ajax {
 			return true;
 		}
 
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing -- Nonce verified in check_payment() before this call.
 		$key = isset( $_POST['order_key'] ) ? sanitize_text_field( wp_unslash( $_POST['order_key'] ) ) : '';
 
 		if ( '' !== $key && hash_equals( (string) $order->get_order_key(), $key ) ) {

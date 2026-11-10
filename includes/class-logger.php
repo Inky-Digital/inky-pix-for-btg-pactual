@@ -345,9 +345,9 @@ class Inky_BTG_Logger {
 		$table = Inky_BTG_Install::get_logs_table_name();
 
 		$deleted = $wpdb->query(
-			// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- Nome de tabela montado a partir do prefixo do próprio WordPress.
 			$wpdb->prepare(
-				"DELETE FROM {$table} WHERE created_at < DATE_SUB( UTC_TIMESTAMP(), INTERVAL %d DAY )",
+				'DELETE FROM %i WHERE created_at < DATE_SUB( UTC_TIMESTAMP(), INTERVAL %d DAY )',
+				$table,
 				$days
 			)
 		);

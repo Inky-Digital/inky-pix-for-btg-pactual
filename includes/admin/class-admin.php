@@ -177,6 +177,7 @@ class Inky_BTG_Admin {
 			wp_die( esc_html__( 'Você não tem permissão para acessar esta página.', 'inky-btg' ) );
 		}
 
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Tab selection for display only; no state change.
 		$tab      = isset( $_GET['tab'] ) ? sanitize_key( wp_unslash( $_GET['tab'] ) ) : 'connection';
 		$settings = Inky_BTG_Settings::all();
 		$env      = Inky_BTG_Settings::get_environment();
@@ -241,6 +242,7 @@ class Inky_BTG_Admin {
 	 * @return void
 	 */
 	private function render_saved_notice() {
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only display flag set by our own redirect; no state change.
 		if ( ! isset( $_GET['inky_btg_saved'] ) ) {
 			return;
 		}
@@ -395,8 +397,11 @@ class Inky_BTG_Admin {
 	private function render_oauth_status( $env, $has_creds ) {
 		$summary = Inky_BTG_Token_Store::get_summary( $env );
 
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only display flag set by our own redirect; no state change.
 		if ( ! empty( $_GET['oauth_status'] ) ) {
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only display flag set by our own redirect; no state change.
 			$status  = sanitize_key( wp_unslash( $_GET['oauth_status'] ) );
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Read-only notice text for display (escaped on output); rawurldecode must run before sanitize_text_field, which strips percent-encoding.
 			$notice  = isset( $_GET['oauth_notice'] ) ? sanitize_text_field( rawurldecode( wp_unslash( $_GET['oauth_notice'] ) ) ) : '';
 			$class   = 'success' === $status ? 'notice-success' : 'notice-error';
 
@@ -1065,9 +1070,9 @@ class Inky_BTG_Admin {
 		$table = Inky_BTG_Install::get_logs_table_name();
 
 		$rows = $wpdb->get_results(
-			// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- Nome de tabela montado a partir do prefixo do próprio WordPress.
 			$wpdb->prepare(
-				"SELECT created_at, level, source, message, correlation_id FROM {$table} ORDER BY id DESC LIMIT %d",
+				'SELECT created_at, level, source, message, correlation_id FROM %i ORDER BY id DESC LIMIT %d',
+				$table,
 				200
 			),
 			ARRAY_A
@@ -1149,6 +1154,7 @@ class Inky_BTG_Admin {
 		exit;
 	}
 
+	// phpcs:disable WordPress.Security.NonceVerification.Missing -- These run only from handle_save(), after check_admin_referer().
 	/**
 	 * Salva a aba de conexão.
 	 *
@@ -1253,4 +1259,5 @@ class Inky_BTG_Admin {
 			array( 'source' => 'admin' )
 		);
 	}
+	// phpcs:enable WordPress.Security.NonceVerification.Missing
 }

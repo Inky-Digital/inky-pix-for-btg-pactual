@@ -72,8 +72,7 @@ function inky_btg_uninstall_site() {
 	);
 
 	foreach ( $tables as $table ) {
-		// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- Nome de tabela montado a partir do prefixo do próprio WordPress.
-		$wpdb->query( "DROP TABLE IF EXISTS {$table}" );
+		$wpdb->query( $wpdb->prepare( 'DROP TABLE IF EXISTS %i', $table ) );
 	}
 
 	$hooks = array(
