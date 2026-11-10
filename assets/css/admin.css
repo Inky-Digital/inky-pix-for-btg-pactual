@@ -1,0 +1,238 @@
+/**
+ * Estilos da tela de configurações do PIX BTG Pactual.
+ *
+ * @package Inky_BTG
+ */
+
+.inky-btg-wrap .inky-btg-tabs {
+    margin-bottom: 0;
+}
+
+.inky-btg-wrap .inky-btg-tab-content {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-top: none;
+    padding: 20px 24px 8px;
+}
+
+.inky-btg-wrap .inky-btg-tab-content h2 {
+    margin-top: 8px;
+    padding-top: 8px;
+}
+
+.inky-btg-wrap .inky-btg-tab-content h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.inky-btg-wrap .inky-btg-badge {
+    display: inline-block;
+    min-width: 18px;
+    height: 18px;
+    margin-left: 6px;
+    padding: 0 5px;
+    border-radius: 9px;
+    background: #d63638;
+    color: #fff;
+    font-size: 11px;
+    line-height: 18px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.inky-btg-wrap .inky-btg-copyable {
+    display: inline-block;
+    padding: 4px 8px;
+    background: #f0f0f1;
+    border: 1px solid #dcdcde;
+    border-radius: 3px;
+    word-break: break-all;
+}
+
+.inky-btg-wrap .inky-btg-hint {
+    color: #646970;
+    font-style: italic;
+}
+
+.inky-btg-wrap .inky-btg-status {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.inky-btg-wrap .inky-btg-status--ok {
+    background: #edfaef;
+    border: 1px solid #68de7c;
+    color: #00450c;
+}
+
+.inky-btg-wrap .inky-btg-status--off {
+    background: #f0f0f1;
+    border: 1px solid #c3c4c7;
+    color: #50575e;
+}
+
+.inky-btg-wrap .inky-btg-warning {
+    color: #996800;
+}
+
+.inky-btg-wrap .inky-btg-list {
+    margin-left: 20px;
+    list-style: disc;
+}
+
+.inky-btg-wrap .inky-btg-list li {
+    margin-bottom: 6px;
+}
+
+.inky-btg-wrap .inky-btg-test-result {
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.inky-btg-wrap .inky-btg-test-result.is-running {
+    color: #646970;
+}
+
+.inky-btg-wrap .inky-btg-test-result.is-success {
+    color: #007017;
+    font-weight: 600;
+}
+
+.inky-btg-wrap .inky-btg-test-result.is-error {
+    color: #d63638;
+    font-weight: 600;
+}
+
+.inky-btg-wrap .inky-btg-copy-result {
+    margin-left: 10px;
+    color: #007017;
+}
+
+.inky-btg-wrap .inky-btg-pending-table {
+    margin-top: 12px;
+}
+
+.inky-btg-wrap .inky-btg-pending-table td {
+    vertical-align: top;
+}
+
+.inky-btg-wrap .inky-btg-pending-table .description {
+    margin: 6px 0 0;
+}
+
+.inky-btg-wrap .inky-btg-status {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.inky-btg-wrap .inky-btg-status-ok {
+    background: #edfaef;
+    color: #007017;
+    border: 1px solid #b8e6bf;
+}
+
+.inky-btg-wrap .inky-btg-status-pending {
+    background: #fcf9e8;
+    color: #996800;
+    border: 1px solid #f0d78c;
+}
+
+.inky-btg-wrap #inky-btg-log-output {
+    margin-top: 8px;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    white-space: pre;
+    overflow-x: auto;
+}
+
+.inky-btg-wrap .inky-btg-checklist {
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: #fff;
+    border: 1px solid #dcdcde;
+    border-left: 4px solid #2271b1;
+    border-radius: 3px;
+}
+
+.inky-btg-wrap .inky-btg-checklist h3 {
+    margin: 0 0 8px;
+    font-size: 14px;
+}
+
+.inky-btg-wrap .inky-btg-checklist-steps {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.inky-btg-wrap .inky-btg-step {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 22px;
+}
+
+.inky-btg-wrap .inky-btg-step:last-child {
+    margin-bottom: 0;
+}
+
+.inky-btg-wrap .inky-btg-step::before {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 14px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.inky-btg-wrap .inky-btg-step.is-ok::before {
+    content: "\2713";
+    color: #007017;
+}
+
+.inky-btg-wrap .inky-btg-step.is-fail::before {
+    content: "\2715";
+    color: #d63638;
+}
+
+.inky-btg-wrap .inky-btg-step.is-skip::before {
+    content: "\2013";
+    color: #996800;
+}
+
+.inky-btg-wrap .inky-btg-step-status {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 1px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.inky-btg-wrap .inky-btg-step.is-ok .inky-btg-step-status {
+    background: #edfaef;
+    color: #007017;
+}
+
+.inky-btg-wrap .inky-btg-step.is-fail .inky-btg-step-status {
+    background: #fcf0f1;
+    color: #d63638;
+}
+
+.inky-btg-wrap .inky-btg-step.is-skip .inky-btg-step-status {
+    background: #fcf9e8;
+    color: #996800;
+}
+
+.inky-btg-wrap .inky-btg-step .description {
+    margin: 4px 0 0;
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="300" viewBox="0 0 1280 300" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1280" height="300" rx="20" fill="#f6f8fc"/>
+  <defs><marker id="s" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2d6bd6"/></marker></defs>
+  <g font-size="16">
+    <g transform="translate(40 70)"><rect width="250" height="150" rx="16" fill="#fff" stroke="#d5deec"/><text x="24" y="40" fill="#2d6bd6" font-family="Menlo, Consolas, monospace" font-size="14">01</text><text x="24" y="72" fill="#0b1830" font-size="20" font-weight="600">Pedido no checkout</text><text x="24" y="102" fill="#4b5d7a">O cliente escolhe Pix</text><text x="24" y="124" fill="#4b5d7a">na sua loja WooCommerce.</text></g>
+    <g transform="translate(350 70)"><rect width="250" height="150" rx="16" fill="#fff" stroke="#d5deec"/><text x="24" y="40" fill="#2d6bd6" font-family="Menlo, Consolas, monospace" font-size="14">02</text><text x="24" y="72" fill="#0b1830" font-size="20" font-weight="600">Cobrança no BTG</text><text x="24" y="102" fill="#4b5d7a">O plugin cria o Pix e mostra</text><text x="24" y="124" fill="#4b5d7a">QR Code e copia e cola.</text></g>
+    <g transform="translate(660 70)"><rect width="250" height="150" rx="16" fill="#fff" stroke="#d5deec"/><text x="24" y="40" fill="#2d6bd6" font-family="Menlo, Consolas, monospace" font-size="14">03</text><text x="24" y="72" fill="#0b1830" font-size="20" font-weight="600">Pagamento cai</text><text x="24" y="102" fill="#4b5d7a">O BTG avisa pelo webhook,</text><text x="24" y="124" fill="#4b5d7a">com consulta de reserva.</text></g>
+    <g transform="translate(970 70)"><rect width="270" height="150" rx="16" fill="#0b1830"/><text x="24" y="40" fill="#8fb4ff" font-family="Menlo, Consolas, monospace" font-size="14">04</text><text x="24" y="72" fill="#fff" font-size="20" font-weight="600">Pedido pago</text><text x="24" y="102" fill="#cbd9ed">Status atualizado sozinho,</text><text x="24" y="124" fill="#cbd9ed">sem conferir extrato.</text></g>
+  </g>
+  <g stroke="#2d6bd6" stroke-width="2.5" marker-end="url(#s)"><line x1="296" y1="145" x2="344" y2="145"/><line x1="606" y1="145" x2="654" y2="145"/><line x1="916" y1="145" x2="964" y2="145"/></g>
+</svg>

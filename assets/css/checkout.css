@@ -1,0 +1,106 @@
+/**
+ * Estilos do bloco PIX na página de obrigado.
+ *
+ * Mantidos enxutos e sem dependência do tema, para funcionar em qualquer
+ * loja. As cores usam a paleta padrão do WooCommerce quando disponível.
+ */
+
+.inky-btg-pix {
+    max-width: 640px;
+    margin: 0 auto 2em;
+    padding: 1.5em;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background: #fff;
+    text-align: center;
+}
+
+.inky-btg-pix__title {
+    margin-top: 0;
+    font-size: 1.35em;
+}
+
+.inky-btg-pix__intro {
+    margin-bottom: 1.25em;
+    color: #555;
+}
+
+.inky-btg-pix__qr {
+    margin: 0 auto 1.25em;
+    line-height: 0;
+}
+
+.inky-btg-pix__qr img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+    background: #fff;
+    padding: 8px;
+}
+
+.inky-btg-pix__code {
+    margin-bottom: 1.25em;
+    text-align: left;
+}
+
+.inky-btg-pix__label {
+    display: block;
+    margin-bottom: 0.35em;
+    font-weight: 600;
+}
+
+.inky-btg-pix__textarea {
+    width: 100%;
+    font-family: monospace;
+    font-size: 0.85em;
+    word-break: break-all;
+    resize: vertical;
+}
+
+.inky-btg-pix__copy {
+    margin-top: 0.5em;
+}
+
+.inky-btg-pix__expires {
+    margin: 0 0 1em;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.inky-btg-pix__status {
+    margin: 0 0 1em;
+    padding: 0.75em 1em;
+    border-radius: 6px;
+    background: #f7f7f7;
+    font-weight: 600;
+}
+
+.inky-btg-pix__status.is-paid {
+    background: #e6f4ea;
+    color: #1e7e34;
+}
+
+.inky-btg-pix__status.is-error {
+    background: #fdecea;
+    color: #a02622;
+}
+
+.inky-btg-pix__actions {
+    margin: 0;
+}
+
+.inky-btg-pix__notice {
+    margin-bottom: 1.5em;
+}
+
+@media (max-width: 480px) {
+    .inky-btg-pix {
+        padding: 1em;
+    }
+
+    .inky-btg-pix__qr img {
+        width: 100%;
+        height: auto;
+    }
+}

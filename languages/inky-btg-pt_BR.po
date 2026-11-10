@@ -1,0 +1,293 @@
+# Copyright (C) 2026 Inky
+# This file is distributed under the same license as the inky-btg plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: inky-btg 1.0.0\n"
+"Report-Msgid-Bugs-To: https://example.com/support\n"
+"Last-Translator: Inky <suporte@example.com>\n"
+"Language-Team: Português do Brasil\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-01-01T00:00:00+00:00\n"
+"PO-Revision-Date: 2026-01-01T00:00:00+00:00\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: inky-btg\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "PIX BTG Pactual para WooCommerce"
+msgstr "PIX BTG Pactual para WooCommerce"
+
+msgid "Receba pagamentos por PIX usando a API Pix Cobrança do BTG Pactual Empresas."
+msgstr "Receba pagamentos por PIX usando a API Pix Cobrança do BTG Pactual Empresas."
+
+msgid "PIX BTG Pactual"
+msgstr "PIX BTG Pactual"
+
+msgid "Testando conexão…"
+msgstr "Testando conexão…"
+
+msgid "Log copiado."
+msgstr "Log copiado."
+
+msgid "Não foi possível copiar o log."
+msgstr "Não foi possível copiar o log."
+
+msgid "Consultando o BTG…"
+msgstr "Consultando o BTG…"
+
+msgid "Não foi possível consultar o pagamento."
+msgstr "Não foi possível consultar o pagamento."
+
+msgid "Informe o número do pedido."
+msgstr "Informe o número do pedido."
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Falhou"
+msgstr "Falhou"
+
+msgid "Ignorado"
+msgstr "Ignorado"
+
+msgid "Verificando…"
+msgstr "Verificando…"
+
+msgid "Checklist concluído."
+msgstr "Checklist concluído."
+
+msgid "O checklist parou na etapa que falhou."
+msgstr "O checklist parou na etapa que falhou."
+
+msgid "Ambiente"
+msgstr "Ambiente"
+
+msgid "Sandbox e produção usam credenciais e tokens separados. Trocar o ambiente não apaga os dados do outro."
+msgstr "Sandbox e produção usam credenciais e tokens separados. Trocar o ambiente não apaga os dados do outro."
+
+msgid "Ambiente ativo"
+msgstr "Ambiente ativo"
+
+msgid "Sandbox (testes)"
+msgstr "Sandbox (testes)"
+
+msgid "Produção"
+msgstr "Produção"
+
+msgid "Atenção: o sandbox não entrega webhooks. Nesse ambiente o plugin depende do polling para confirmar pagamentos."
+msgstr "Atenção: o sandbox não entrega webhooks. Nesse ambiente o plugin depende do polling para confirmar pagamentos."
+
+msgid "Credenciais do aplicativo"
+msgstr "Credenciais do aplicativo"
+
+msgid "Informe o client_id e o client_secret do aplicativo criado na Área do Desenvolvedor do BTG. Os valores são cifrados antes de serem gravados."
+msgstr "Informe o client_id e o client_secret do aplicativo criado na Área do Desenvolvedor do BTG. Os valores são cifrados antes de serem gravados."
+
+msgid "Client ID"
+msgstr "Client ID"
+
+msgid "Client Secret"
+msgstr "Client Secret"
+
+msgid "Deixe em branco para manter o valor atual."
+msgstr "Deixe em branco para manter o valor atual."
+
+msgid "URL de redirecionamento"
+msgstr "URL de redirecionamento"
+
+msgid "Cadastre exatamente esta URL no aplicativo do BTG. Ela não é configurável."
+msgstr "Cadastre exatamente esta URL no aplicativo do BTG. Ela não é configurável."
+
+msgid "Salvar credenciais"
+msgstr "Salvar credenciais"
+
+msgid "Autorização"
+msgstr "Autorização"
+
+msgid "O BTG usa o fluxo Authorization Code. É preciso autorizar uma vez por ambiente, entrando com um usuário operador ou superior."
+msgstr "O BTG usa o fluxo Authorization Code. É preciso autorizar uma vez por ambiente, entrando com um usuário operador ou superior."
+
+msgid "Testar conexão"
+msgstr "Testar conexão"
+
+msgid "Checklist da conexão"
+msgstr "Checklist da conexão"
+
+msgid "Salve o client_id e o client_secret para habilitar o teste de conexão."
+msgstr "Salve o client_id e o client_secret para habilitar o teste de conexão."
+
+msgid "Verificar pagamento agora"
+msgstr "Verificar pagamento agora"
+
+msgid "Consulta o BTG na hora, sem esperar o próximo ciclo do polling. Use quando o cliente avisar que pagou e o pedido ainda estiver pendente."
+msgstr "Consulta o BTG na hora, sem esperar o próximo ciclo do polling. Use quando o cliente avisar que pagou e o pedido ainda estiver pendente."
+
+msgid "Número do pedido"
+msgstr "Número do pedido"
+
+msgid "Últimos registros"
+msgstr "Últimos registros"
+
+msgid "Copiar log"
+msgstr "Copiar log"
+
+msgid "Log detalhado"
+msgstr "Log detalhado"
+
+msgid "Registrar chamadas e respostas da API"
+msgstr "Registrar chamadas e respostas da API"
+
+msgid "Tokens, segredos e chaves PIX são sempre mascarados, mesmo com o log detalhado ligado."
+msgstr "Tokens, segredos e chaves PIX são sempre mascarados, mesmo com o log detalhado ligado."
+
+msgid "Remover dados ao desinstalar"
+msgstr "Remover dados ao desinstalar"
+
+msgid "Apagar configurações, credenciais e logs ao desinstalar o plugin"
+msgstr "Apagar configurações, credenciais e logs ao desinstalar o plugin"
+
+msgid "Salvar diagnóstico"
+msgstr "Salvar diagnóstico"
+
+msgid "Itens aguardando confirmação"
+msgstr "Itens aguardando confirmação"
+
+msgid "Estes pontos não estão descritos na documentação pública do BTG. O plugin não inventou nenhum valor: onde não há confirmação, ele adota o comportamento mais seguro e avisa aqui."
+msgstr "Estes pontos não estão descritos na documentação pública do BTG. O plugin não inventou nenhum valor: onde não há confirmação, ele adota o comportamento mais seguro e avisa aqui."
+
+msgid "Item"
+msgstr "Item"
+
+msgid "Situação"
+msgstr "Situação"
+
+msgid "O que fazer"
+msgstr "O que fazer"
+
+msgid "Confirmado"
+msgstr "Confirmado"
+
+msgid "Presumido"
+msgstr "Presumido"
+
+msgid "Você não tem permissão para consultar pedidos."
+msgstr "Você não tem permissão para consultar pedidos."
+
+msgid "Pedido não encontrado."
+msgstr "Pedido não encontrado."
+
+msgid "Pagamento confirmado. O pedido foi marcado como pago."
+msgstr "Pagamento confirmado. O pedido foi marcado como pago."
+
+msgid "O BTG ainda não registrou o pagamento desta cobrança."
+msgstr "O BTG ainda não registrou o pagamento desta cobrança."
+
+msgid "Você não tem permissão para testar a conexão."
+msgstr "Você não tem permissão para testar a conexão."
+
+msgid "client_id e client_secret encontrados."
+msgstr "client_id e client_secret encontrados."
+
+msgid "Salve o client_id e o client_secret na aba Conexão."
+msgstr "Salve o client_id e o client_secret na aba Conexão."
+
+msgid "O checklist parou na primeira etapa."
+msgstr "O checklist parou na primeira etapa."
+
+msgid "Autorização OAuth"
+msgstr "Autorização OAuth"
+
+msgid "Token de acesso presente para este ambiente."
+msgstr "Token de acesso presente para este ambiente."
+
+msgid "Clique em Conectar e autorize o aplicativo no BTG."
+msgstr "Clique em Conectar e autorize o aplicativo no BTG."
+
+msgid "O checklist parou na etapa de autorização."
+msgstr "O checklist parou na etapa de autorização."
+
+msgid "Validade do token"
+msgstr "Validade do token"
+
+msgid "O token expirou. A renovação automática deve assumir na próxima chamada."
+msgstr "O token expirou. A renovação automática deve assumir na próxima chamada."
+
+msgid "Token dentro da validade."
+msgstr "Token dentro da validade."
+
+msgid "Identificador da empresa"
+msgstr "Identificador da empresa"
+
+msgid "companyId lido da claim pix-cash-in do token."
+msgstr "companyId lido da claim pix-cash-in do token."
+
+msgid "A claim pix-cash-in não trouxe o companyId. Verifique se o aplicativo tem o escopo de PIX habilitado."
+msgstr "A claim pix-cash-in não trouxe o companyId. Verifique se o aplicativo tem o escopo de PIX habilitado."
+
+msgid "O checklist parou na leitura do companyId."
+msgstr "O checklist parou na leitura do companyId."
+
+msgid "Chamada autenticada à API"
+msgstr "Chamada autenticada à API"
+
+msgid "O checklist parou na chamada à API."
+msgstr "O checklist parou na chamada à API."
+
+msgid "A API respondeu à listagem de locations."
+msgstr "A API respondeu à listagem de locations."
+
+msgid "Webhook"
+msgstr "Webhook"
+
+msgid "Segredo salvo. Lembre que o sandbox não entrega webhooks: o polling confirma os pagamentos."
+msgstr "Segredo salvo. Lembre que o sandbox não entrega webhooks: o polling confirma os pagamentos."
+
+msgid "O sandbox não entrega webhooks. O polling cobre a confirmação."
+msgstr "O sandbox não entrega webhooks. O polling cobre a confirmação."
+
+msgid "Segredo do webhook configurado."
+msgstr "Segredo do webhook configurado."
+
+msgid "Cadastre o segredo do webhook na aba Webhook para validar as notificações."
+msgstr "Cadastre o segredo do webhook na aba Webhook para validar as notificações."
+
+msgid "Todas as etapas foram concluídas."
+msgstr "Todas as etapas foram concluídas."
+
+msgid "Nenhum registro encontrado."
+msgstr "Nenhum registro encontrado."
+
+msgid "Você não tem permissão para salvar estas configurações."
+msgstr "Você não tem permissão para salvar estas configurações."
+
+msgid "Receba pagamentos por PIX usando a API Pix Cobrança do BTG Pactual Empresas. O cliente paga lendo o QR Code ou usando o copia e cola."
+msgstr "Receba pagamentos por PIX usando a API Pix Cobrança do BTG Pactual Empresas. O cliente paga lendo o QR Code ou usando o copia e cola."
+
+msgid "PIX"
+msgstr "PIX"
+
+msgid "Ativar"
+msgstr "Ativar"
+
+msgid "Ativar o pagamento por PIX"
+msgstr "Ativar o pagamento por PIX"
+
+msgid "Título no checkout"
+msgstr "Título no checkout"
+
+msgid "Como o meio de pagamento aparece para o cliente no checkout."
+msgstr "Como o meio de pagamento aparece para o cliente no checkout."
+
+msgid "Descrição no checkout"
+msgstr "Descrição no checkout"
+
+msgid "Texto exibido abaixo do título, explicando como o cliente deve pagar."
+msgstr "Texto exibido abaixo do título, explicando como o cliente deve pagar."
+
+msgid "Ao finalizar o pedido, mostramos o QR Code e o código copia e cola. O pedido é confirmado automaticamente após o pagamento."
+msgstr "Ao finalizar o pedido, mostramos o QR Code e o código copia e cola. O pedido é confirmado automaticamente após o pagamento."
+
+msgid "O plugin PIX BTG Pactual para WooCommerce precisa do WooCommerce instalado e ativo para funcionar."
+msgstr "O plugin PIX BTG Pactual para WooCommerce precisa do WooCommerce instalado e ativo para funcionar."
